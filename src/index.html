@@ -1,15 +1,61 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+		/>
+		<title>Simbuka Frontend Functional Table library</title>
 
-</head>
-<body>
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<script src="/build/table.js"></script>
+	</head>
+	<body>
+		<div class="mx-auto mt-16 max-w-xl">
+			<sfl-table></sfl-table>
+		</div>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-
-</body>
+		<script>
+			const table = document.querySelector('sfl-table');
+			table.columns = ['Family name', 'Given name', 'Birth date'];
+			table.rows = [
+				{
+					values: ['Jones', 'Bob', '1992-04-27'],
+					instanceId: 1
+				},
+				{
+					values: ['King', 'Zack', '1997-07-20'],
+					instanceId: 2
+				},
+				{
+					values: ['Price', 'Tom', '1995-03-20'],
+					instanceId: 3
+				},
+				{
+					values: ['Cooper', 'Zack', '1983-05-01'],
+					instanceId: 4
+				},
+				{
+					values: ['Fox', 'Alice', '1980-10-15'],
+					instanceId: 5
+				},
+				{
+					values: ['Price', 'Bob', '1997-08-29'],
+					instanceId: 6
+				},
+				{
+					values: ['Brown', 'Dave', '1979-11-16'],
+					instanceId: 7
+				},
+				{
+					values: ['Johnson', 'Dave', '1977-11-15'],
+					instanceId: 8
+				}
+			];
+		</script>
+	</body>
 </html>

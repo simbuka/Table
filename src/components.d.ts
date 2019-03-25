@@ -8,62 +8,45 @@
 import '@stencil/core';
 
 
+import {
+  IBodyRow,
+} from './components/table/helpers/IBodyRow';
 
 
 export namespace Components {
 
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+  interface SflTable {
+    'columns': Array<string>;
+    'rows': Array<IBodyRow>;
   }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+  interface SflTableAttributes extends StencilHTMLAttributes {
+    'columns'?: Array<string>;
+    'rows': Array<IBodyRow>;
   }
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'MyComponent': Components.MyComponent;
+    'SflTable': Components.SflTable;
   }
 
   interface StencilIntrinsicElements {
-    'my-component': Components.MyComponentAttributes;
+    'sfl-table': Components.SflTableAttributes;
   }
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLSflTableElement extends Components.SflTable, HTMLStencilElement {}
+  var HTMLSflTableElement: {
+    prototype: HTMLSflTableElement;
+    new (): HTMLSflTableElement;
   };
 
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'sfl-table': HTMLSflTableElement
   }
 
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'sfl-table': HTMLSflTableElement;
   }
 
 
