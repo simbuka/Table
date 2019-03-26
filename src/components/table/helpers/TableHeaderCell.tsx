@@ -34,23 +34,28 @@ export const TableHeaderCell: FunctionalComponent<{
 		</svg>
 	);
 
-	const thStyle = `${
-		sortable ? 'cursor-pointer ' : ''
-	} border-0 px-4 py-3 uppercase text-sm text-grey-darkest tracking-wide whitespace-no-wrap bg-grey-lightest font-sans`;
+	const ths = columns.map(({ name, sort }: IHeaderColumn, key: number) => {
+		const thClasses =
+			'border-0 px-4 py-3 uppercase text-sm text-grey-darkest tracking-wide whitespace-no-wrap bg-grey-lightest font-sans';
 
-	return [
-		<tr class="border-b-2 border-grey-lighter text-left">
-			{columns.map((column: IHeaderColumn, key: number) => (
-				<th
-					class={thStyle}
-					onClick={event =>
-						handleSortChange(event.target as HTMLElement, key)
-					}
-				>
-					<span class="align-middle">{column.name}</span>
-					{getSortingIcon(column.sort)}
-				</th>
-			))}
-		</tr>
-	];
+		if (name == '') {
+			return <th class={`${thClasses} w-px whitespace-no-wrap`} />;
+		}
+
+		return (
+			<th
+				class={`${sortable ? ' cursor-pointer ' : ''} ${thClasses}`}
+				onClick={event => handleSortChange(event.target as HTMLElement, key)}
+			>
+				<span class="align-middle">{name}</span>
+				{getSortingIcon(sort)}
+			</th>
+		);
+	});
+
+	return (
+		<thead>
+			<tr class="border-b-2 border-grey-lighter text-left">{ths}</tr>
+		</thead>
+	);
 };

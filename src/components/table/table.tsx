@@ -45,6 +45,16 @@ export class Table {
 					sort: 'none'
 				} as IHeaderColumn)
 		);
+
+		if (this.rows.length && this.rows[0].buttons.length) {
+			this._columns = [
+				...this._columns,
+				{
+					name: '',
+					sort: 'none'
+				} as IHeaderColumn
+			];
+		}
 	}
 
 	render() {

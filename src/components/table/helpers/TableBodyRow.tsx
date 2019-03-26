@@ -1,13 +1,25 @@
 import { FunctionalComponent } from '@stencil/core';
 import { capitalize } from '../../../utils/utils';
 import { IBodyRow } from './IBodyRow';
+import { IRowButton } from './IRowButton';
+import { RowButton } from './RowButton';
 
-export const TableBodyRow: FunctionalComponent<IBodyRow> = ({ values }) => {
+export const TableBodyRow: FunctionalComponent<IBodyRow> = ({
+	instanceId,
+	values,
+	buttons
+}) => {
 	return (
 		<tr class="text-base border-grey-lighter border-0 border-b text-grey-darkest bg-white font-sans">
-			{values.map(value => {
-				return <td class={`py-4 px-4 align-middle`}>{capitalize(value)}</td>;
-			})}
+			{values.map((value: string) => (
+				<td class="py-4 px-4 align-middle">{capitalize(value)}</td>
+			))}
+
+			<td class="flex justify-between">
+				{buttons.map((button: IRowButton) => (
+					<RowButton {...button} rowId={instanceId} />
+				))}
+			</td>
 		</tr>
 	);
 };

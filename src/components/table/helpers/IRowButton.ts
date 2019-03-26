@@ -1,4 +1,4 @@
-interface IButtonHyperlink {
+export interface IButtonHyperlink {
 	buttonType: 'hyperlink';
 	hoverText: string;
 	doesUserHavePermissionToPress: boolean;
@@ -6,7 +6,7 @@ interface IButtonHyperlink {
 	icon: string; // IconName??
 }
 
-interface IButtonDeletion {
+export interface IButtonDeletion {
 	buttonType: 'deletion';
 	hoverText: string;
 	doesUserHavePermissionToPress: boolean;
@@ -16,4 +16,4 @@ interface IButtonDeletion {
 	entityFormId: number;
 }
 
-export type IBodyRowButton = IButtonDeletion | IButtonHyperlink;
+export type IRowButton = IButtonDeletion | IButtonHyperlink;
