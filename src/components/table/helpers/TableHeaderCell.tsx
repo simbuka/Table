@@ -5,30 +5,43 @@ export const TableHeaderCell: FunctionalComponent<{
 	columns: Array<IHeaderColumn>;
 	sortable?: boolean;
 }> = ({ columns, sortable = false }) => {
-	// /**
-	//  * Emits an event when sorting direction changes
-	//  */
-	// @Event() onSortChange: EventEmitter<IHeaderColumn>;
-
-	const handleSortChange = (column: IHeaderColumn) => {
+	const handleSortChange = (element: HTMLElement, key: number) => {
 		if (sortable) {
-			// TODO: fix this event?
-			this.onSortChange.emit(column);
+			element.dispatchEvent(
+				new CustomEvent('onSortChange', {
+					detail: { key },
+					bubbles: true
+				})
+			);
 		}
 	};
 
+	// TEMP
 	const getSortingIcon = (direction: 'none' | 'asc' | 'desc') => (
-		<sfc-icon
-			display="inline-block"
-			name="menu-down"
+		<div
 			class="h-5"
 			style={{
+				display: 'inline-block',
 				marginLeft: '5',
 				transform: direction === 'desc' ? 'rotate(180deg)' : '',
 				opacity: direction === 'none' ? '0' : '1'
 			}}
-		/>
+		>
+			\/
+		</div>
 	);
+	// const getSortingIcon = (direction: 'none' | 'asc' | 'desc') => (
+	// 	<sfc-icon
+	// 		display="inline-block"
+	// 		name="menu-down"
+	// 		class="h-5"
+	// 		style={{
+	// 			marginLeft: '5',
+	// 			transform: direction === 'desc' ? 'rotate(180deg)' : '',
+	// 			opacity: direction === 'none' ? '0' : '1'
+	// 		}}
+	// 	/>
+	// );
 
 	const thStyle = `${
 		sortable ? 'cursor-pointer ' : ''
@@ -36,8 +49,13 @@ export const TableHeaderCell: FunctionalComponent<{
 
 	return [
 		<tr class="border-b-2 border-grey-lighter text-left">
-			{columns.map(column => (
-				<th class={thStyle} onClick={() => handleSortChange(column)}>
+			{columns.map((column: IHeaderColumn, key: number) => (
+				<th
+					class={thStyle}
+					onClick={event =>
+						handleSortChange(event.target as HTMLElement, key)
+					}
+				>
 					<span>{column.name}</span>
 					{getSortingIcon(column.sort)}
 				</th>

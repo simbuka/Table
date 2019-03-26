@@ -11,6 +11,12 @@ import '@stencil/core';
 import {
   IBodyRow,
 } from './components/table/helpers/IBodyRow';
+import {
+  EventEmitter,
+} from '@stencil/core';
+import {
+  IOnReload,
+} from './components/table/helpers/IOnReload';
 
 
 export namespace Components {
@@ -18,10 +24,13 @@ export namespace Components {
   interface SflTable {
     'columns': Array<string>;
     'rows': Array<IBodyRow>;
+    'sortable': boolean;
   }
   interface SflTableAttributes extends StencilHTMLAttributes {
     'columns'?: Array<string>;
+    'onOnReload'?: (event: CustomEvent<IOnReload>) => void;
     'rows': Array<IBodyRow>;
+    'sortable'?: boolean;
   }
 }
 

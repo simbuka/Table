@@ -20,9 +20,7 @@
 		</div>
 
 		<script>
-			const table = document.querySelector('sfl-table');
-			table.columns = ['Family name', 'Given name', 'Birth date'];
-			table.rows = [
+			let demoData = [
 				{
 					values: ['Jones', 'Bob', '1992-04-27'],
 					instanceId: 1
@@ -56,6 +54,34 @@
 					instanceId: 8
 				}
 			];
+
+			const table = document.querySelector('sfl-table');
+			table.columns = ['Family name', 'Given name', 'Birth date'];
+			table.rows = demoData;
+			table.addEventListener('onReload', event => {
+				event.stopPropagation();
+
+				table.rows = demoData.sort((a, b) => {
+					let value1, value2;
+					if (event.detail.ascending) {
+						value1 = a.values[event.detail.sortColumn].toUpperCase();
+						value2 = b.values[event.detail.sortColumn].toUpperCase();
+					} else {
+						value1 = b.values[event.detail.sortColumn].toUpperCase();
+						value2 = a.values[event.detail.sortColumn].toUpperCase();
+					}
+
+					if (value1 < value2) {
+						return -1;
+					}
+
+					if (value1 > value2) {
+						return 1;
+					}
+
+					return 0;
+				});
+			});
 		</script>
 	</body>
 </html>
