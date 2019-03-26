@@ -16,36 +16,27 @@ export const TableHeaderCell: FunctionalComponent<{
 		}
 	};
 
-	// TEMP
 	const getSortingIcon = (direction: 'none' | 'asc' | 'desc') => (
-		<div
-			class="h-5"
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 100 100"
+			class="h-2 ml-1 align-middle"
 			style={{
-				display: 'inline-block',
-				marginLeft: '5',
-				transform: direction === 'desc' ? 'rotate(180deg)' : '',
+				transform: direction === 'asc' ? 'rotate(180deg)' : '',
 				opacity: direction === 'none' ? '0' : '1'
 			}}
 		>
-			\/
-		</div>
+			<switch>
+				<g>
+					<path d="M43.1 21.3L4.6 67.1c-4.9 5.8-.8 14.8 6.9 14.8h77c7.6 0 11.8-8.9 6.9-14.8L56.9 21.3c-3.6-4.2-10.2-4.2-13.8 0z" />
+				</g>
+			</switch>
+		</svg>
 	);
-	// const getSortingIcon = (direction: 'none' | 'asc' | 'desc') => (
-	// 	<sfc-icon
-	// 		display="inline-block"
-	// 		name="menu-down"
-	// 		class="h-5"
-	// 		style={{
-	// 			marginLeft: '5',
-	// 			transform: direction === 'desc' ? 'rotate(180deg)' : '',
-	// 			opacity: direction === 'none' ? '0' : '1'
-	// 		}}
-	// 	/>
-	// );
 
 	const thStyle = `${
 		sortable ? 'cursor-pointer ' : ''
-	} border-0 px-4 pt-2 pb-3 uppercase text-sm text-grey-darkest tracking-wide whitespace-no-wrap bg-grey-lightest font-sans`;
+	} border-0 px-4 py-3 uppercase text-sm text-grey-darkest tracking-wide whitespace-no-wrap bg-grey-lightest font-sans`;
 
 	return [
 		<tr class="border-b-2 border-grey-lighter text-left">
@@ -56,7 +47,7 @@ export const TableHeaderCell: FunctionalComponent<{
 						handleSortChange(event.target as HTMLElement, key)
 					}
 				>
-					<span>{column.name}</span>
+					<span class="align-middle">{column.name}</span>
 					{getSortingIcon(column.sort)}
 				</th>
 			))}
