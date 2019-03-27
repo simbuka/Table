@@ -44,7 +44,7 @@ export const TableHeaderCell: FunctionalComponent<{
 
 		return (
 			<th
-				class={`${sortable ? ' cursor-pointer ' : ''} ${thClasses}`}
+				class={`${sortable ? ' cursor-pointer select-none ' : ''} ${thClasses}`}
 				onClick={event => handleSortChange(event.target as HTMLElement, key)}
 			>
 				<span class="align-middle">{name}</span>
