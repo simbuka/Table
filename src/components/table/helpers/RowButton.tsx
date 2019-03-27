@@ -4,7 +4,7 @@ import { DeletionButton } from './row-buttons/DeletionButton';
 import { IRowButton } from './IRowButton';
 
 export const RowButton: FunctionalComponent<IRowButton & { rowId: number }> = props => (
-	<div class="mx-2 my-2 align-middle cursor-pointer">
+	<div class="mx-2 my-2 w-6 h-6 align-middle cursor-pointer">
 		{props.buttonType == 'hyperlink' ? (
 			<HyperlinkButton {...props} />
 		) : (

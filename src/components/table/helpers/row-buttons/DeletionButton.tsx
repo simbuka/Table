@@ -1,5 +1,6 @@
 import { FunctionalComponent } from '@stencil/core';
 import { IButtonDeletion } from '../IRowButton';
+import { capitalize } from '../../../../utils/utils';
 
 export const DeletionButton: FunctionalComponent<
 	IButtonDeletion & { rowId: number }
@@ -16,7 +17,10 @@ export const DeletionButton: FunctionalComponent<
 	};
 
 	return (
-		<div onClick={event => handleClick(event.target as HTMLElement)}>
+		<div
+			title={capitalize(props.hoverText)}
+			onClick={event => handleClick(event.target as HTMLElement)}
+		>
 			<svg viewBox="0 0 24 24" class="text-black hover:text-grey-darkest w-6">
 				<path
 					class="fill-current"

@@ -15,10 +15,12 @@ export const TableBodyRow: FunctionalComponent<IBodyRow> = ({
 				<td class="py-4 px-4 align-middle">{capitalize(value)}</td>
 			))}
 
-			<td class="flex justify-between">
-				{buttons.map((button: IRowButton) => (
-					<RowButton {...button} rowId={instanceId} />
-				))}
+			<td class="align-middle">
+				<div class="flex justify-between">
+					{buttons.map((button: IRowButton) => (
+						<RowButton {...button} rowId={instanceId} />
+					))}
+				</div>
 			</td>
 		</tr>
 	);

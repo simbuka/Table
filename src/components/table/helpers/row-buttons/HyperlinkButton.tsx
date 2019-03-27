@@ -1,12 +1,13 @@
 import { FunctionalComponent } from '@stencil/core';
 import { IButtonHyperlink } from '../IRowButton';
+import { capitalize } from '../../../../utils/utils';
 
 export const HyperlinkButton: FunctionalComponent<IButtonHyperlink> = ({
 	hoverText,
 	hyperlink
 }) => {
 	return (
-		<a title={hoverText} href={hyperlink}>
+		<a title={capitalize(hoverText)} href={hyperlink}>
 			<svg viewBox="0 0 24 24" class="text-black hover:text-grey-darkest w-6">
 				<path
 					class="fill-current"
