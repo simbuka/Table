@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+		/>
+		<title>Simbuka Frontend Functional Table library</title>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<script src="/build/table.js"></script>
+	</head>
+	<body>
+		<div class="mx-auto mt-16 max-w-xl">
+			<sfl-table>
+				<div slot="header">
+					<sfl-table-header-row>
+						<div slot="checkbox">
+							CHECKBOX
+						</div>
+					</sfl-table-header-row>
+				</div>
+
+				<div slot="body">
+					<sfl-table-body-row>
+						<div slot="checkbox">CHECKBOX</div>
+						<div slot="buttons">BUTTONS</div>
+					</sfl-table-body-row>
+					<sfl-table-body-row>
+						<div slot="checkbox">CHECKBOX</div>
+						<div slot="buttons">BUTTONS</div>
+					</sfl-table-body-row>
+					<sfl-table-body-row>
+						<div slot="checkbox">CHECKBOX</div>
+						<div slot="buttons">BUTTONS</div>
+					</sfl-table-body-row>
+					<sfl-table-body-row>
+						<div slot="checkbox">CHECKBOX</div>
+						<div slot="buttons">BUTTONS</div>
+					</sfl-table-body-row>
+					<sfl-table-body-row>
+						<div slot="checkbox">CHECKBOX</div>
+						<div slot="buttons">BUTTONS</div>
+					</sfl-table-body-row>
+					<sfl-table-body-row>
+						<div slot="checkbox">CHECKBOX</div>
+						<div slot="buttons">BUTTONS</div>
+					</sfl-table-body-row>
+					<sfl-table-body-row>
+						<div slot="checkbox">CHECKBOX</div>
+						<div slot="buttons">BUTTONS</div>
+					</sfl-table-body-row>
+				</div>
+			</sfl-table>
+		</div>
+
+		<script>
+			const rows = [
+				{
+					values: ['Green', 'Chad', '1990-05-11'],
+					instanceId: 1,
+					buttons: [
+						{
+							buttonType: 'hyperlink',
+							hoverText: 'person dashboard',
+							hyperlink: '/inspect?dashboardId=1&instanceId=1',
+							icon: 'eye',
+							doesUserHavePermissionToPress: true
+						},
+						{
+							buttonType: 'deletion',
+							hoverText: 'Delete person',
+							doesUserHavePermissionToPress: true,
+							entityFormId: 9
+						}
+					]
+				},
+				{
+					values: ['King', 'Tom', '1979-01-31'],
+					instanceId: 2,
+					buttons: [
+						{
+							buttonType: 'hyperlink',
+							hoverText: 'person dashboard',
+							hyperlink: '/inspect?dashboardId=1&instanceId=2',
+							icon: 'eye',
+							doesUserHavePermissionToPress: true
+						},
+						{
+							buttonType: 'deletion',
+							hoverText: 'Delete person',
+							doesUserHavePermissionToPress: true,
+							entityFormId: 9
+						}
+					]
+				},
+				{
+					values: ['Green', 'Tom', '1972-12-07'],
+					instanceId: 3,
+					buttons: [
+						{
+							buttonType: 'hyperlink',
+							hoverText: 'person dashboard',
+							hyperlink: '/inspect?dashboardId=1&instanceId=3',
+							icon: 'eye',
+							doesUserHavePermissionToPress: true
+						},
+						{
+							buttonType: 'deletion',
+							hoverText: 'Delete person',
+							doesUserHavePermissionToPress: true,
+							entityFormId: 9
+						}
+					]
+				},
+				{
+					values: ['Cooper', 'Martin', '1993-01-22'],
+					instanceId: 4,
+					buttons: [
+						{
+							buttonType: 'hyperlink',
+							hoverText: 'person dashboard',
+							hyperlink: '/inspect?dashboardId=1&instanceId=4',
+							icon: 'eye',
+							doesUserHavePermissionToPress: true
+						},
+						{
+							buttonType: 'deletion',
+							hoverText: 'Delete person',
+							doesUserHavePermissionToPress: true,
+							entityFormId: 9
+						}
+					]
+				},
+				{
+					values: ['Doe', 'John', '1970-03-25'],
+					instanceId: 5,
+					buttons: [
+						{
+							buttonType: 'hyperlink',
+							hoverText: 'person dashboard',
+							hyperlink: '/inspect?dashboardId=1&instanceId=5',
+							icon: 'eye',
+							doesUserHavePermissionToPress: true
+						},
+						{
+							buttonType: 'deletion',
+							hoverText: 'Delete person',
+							doesUserHavePermissionToPress: true,
+							entityFormId: 9
+						}
+					]
+				},
+				{
+					values: ['Brown', 'Bob', '1985-07-26'],
+					instanceId: 6,
+					buttons: [
+						{
+							buttonType: 'hyperlink',
+							hoverText: 'person dashboard',
+							hyperlink: '/inspect?dashboardId=1&instanceId=6',
+							icon: 'eye',
+							doesUserHavePermissionToPress: true
+						},
+						{
+							buttonType: 'deletion',
+							hoverText: 'Delete person',
+							doesUserHavePermissionToPress: true,
+							entityFormId: 9
+						}
+					]
+				},
+				{
+					values: ['Jones', 'Adam', '1993-01-27'],
+					instanceId: 7,
+					buttons: [
+						{
+							buttonType: 'hyperlink',
+							hoverText: 'person dashboard',
+							hyperlink: '/inspect?dashboardId=1&instanceId=7',
+							icon: 'eye',
+							doesUserHavePermissionToPress: true
+						},
+						{
+							buttonType: 'deletion',
+							hoverText: 'Delete person',
+							doesUserHavePermissionToPress: true,
+							entityFormId: 9
+						}
+					]
+				},
+				{
+					values: ['Johnson', 'Rick', '1988-11-05'],
+					instanceId: 8,
+					buttons: [
+						{
+							buttonType: 'hyperlink',
+							hoverText: 'person dashboard',
+							hyperlink: '/inspect?dashboardId=1&instanceId=8',
+							icon: 'eye',
+							doesUserHavePermissionToPress: true
+						},
+						{
+							buttonType: 'deletion',
+							hoverText: 'Delete person',
+							doesUserHavePermissionToPress: true,
+							entityFormId: 9
+						}
+					]
+				},
+				{
+					values: ['Ignatiadi', 'Anna', '1995-09-06'],
+					instanceId: 9,
+					buttons: [
+						{
+							buttonType: 'hyperlink',
+							hoverText: 'person dashboard',
+							hyperlink: '/inspect?dashboardId=1&instanceId=9',
+							icon: 'eye',
+							doesUserHavePermissionToPress: true
+						},
+						{
+							buttonType: 'deletion',
+							hoverText: 'Delete person',
+							doesUserHavePermissionToPress: true,
+							entityFormId: 9
+						}
+					]
+				},
+				{
+					values: ['Mfura', 'Yves', '1995-05-01'],
+					instanceId: 10,
+					buttons: [
+						{
+							buttonType: 'hyperlink',
+							hoverText: 'person dashboard',
+							hyperlink: '/inspect?dashboardId=1&instanceId=10',
+							icon: 'eye',
+							doesUserHavePermissionToPress: true
+						},
+						{
+							buttonType: 'deletion',
+							hoverText: 'Delete person',
+							doesUserHavePermissionToPress: true,
+							entityFormId: 9
+						}
+					]
+				},
+				{
+					values: ['Zanden', 'Mark', '1990-01-01'],
+					instanceId: 11,
+					buttons: [
+						{
+							buttonType: 'hyperlink',
+							hoverText: 'person dashboard',
+							hyperlink: '/inspect?dashboardId=1&instanceId=11',
+							icon: 'eye',
+							doesUserHavePermissionToPress: true
+						},
+						{
+							buttonType: 'deletion',
+							hoverText: 'Delete person',
+							doesUserHavePermissionToPress: true,
+							entityFormId: 9
+						}
+					]
+				},
+				{
+					values: ['test', 'test', '1990-01-30'],
+					instanceId: 12,
+					buttons: [
+						{
+							buttonType: 'hyperlink',
+							hoverText: 'person dashboard',
+							hyperlink: '/inspect?dashboardId=1&instanceId=12',
+							icon: 'eye',
+							doesUserHavePermissionToPress: true
+						},
+						{
+							buttonType: 'deletion',
+							hoverText: 'Delete person',
+							doesUserHavePermissionToPress: true,
+							entityFormId: 9
+						}
+					]
+				},
+				{
+					values: ['Willems', 'Kim', '1988-05-25'],
+					instanceId: 13,
+					buttons: [
+						{
+							buttonType: 'hyperlink',
+							hoverText: 'person dashboard',
+							hyperlink: '/inspect?dashboardId=1&instanceId=13',
+							icon: 'eye',
+							doesUserHavePermissionToPress: true
+						},
+						{
+							buttonType: 'deletion',
+							hoverText: 'Delete person',
+							doesUserHavePermissionToPress: true,
+							entityFormId: 9
+						}
+					]
+				}
+			];
+			const columns = [
+				{ name: 'Family name', sort: 'none' },
+				{ name: 'Given name', sort: 'none' },
+				{ name: 'Birth name', sort: 'none' }
+			];
+
+			document.querySelector('sfl-table-header-row').columns = columns;
+			document.querySelectorAll('sfl-table-body-row').forEach((row, index) => {
+				row.row = rows[index];
+			});
+
+			const table = document.querySelector('sfl-table');
+			table.addEventListener('onSortChange', event => {
+				event.stopPropagation();
+				console.log('Event onSortChange:', event.detail);
+			});
+		</script>
+	</body>
+</html>
