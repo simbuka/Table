@@ -57,8 +57,12 @@ export namespace Components {
     'columns'?: Array<IHeaderColumn>;
   }
 
-  interface SflTable {}
-  interface SflTableAttributes extends StencilHTMLAttributes {}
+  interface SflTable {
+    'noResults': boolean;
+  }
+  interface SflTableAttributes extends StencilHTMLAttributes {
+    'noResults'?: boolean;
+  }
 }
 
 declare global {
