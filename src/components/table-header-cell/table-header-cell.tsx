@@ -20,12 +20,6 @@ export class TableHeaderCell {
 
 	hostData() {
 		return {
-			class: `${
-				this.sortable ? ' cursor-pointer select-none ' : ''
-			} border-0 px-4 py-3 uppercase text-sm text-grey-darkest tracking-wide whitespace-no-wrap font-sans block`,
-			onClick: () => {
-				this.handleClick();
-			},
 			style: { display: 'table-cell' }
 		};
 	}
@@ -35,10 +29,10 @@ export class TableHeaderCell {
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 100 100"
-				class="h-2 ml-1 align-middle"
+				class={`h-2 ml-1 align-middle ${this.column.sort === 'none' &&
+					'hidden'}`}
 				style={{
-					transform: this.column.sort === 'asc' ? 'rotate(180deg)' : '',
-					opacity: this.column.sort === 'none' ? '0' : '1'
+					transform: this.column.sort === 'asc' ? 'rotate(180deg)' : ''
 				}}
 			>
 				<switch>
@@ -49,6 +43,17 @@ export class TableHeaderCell {
 			</svg>
 		);
 
-		return [<span class="align-middle font-bold">{this.column.name}</span>, icon];
+		return (
+			<div
+				class={`${
+					this.sortable ? ' cursor-pointer select-none ' : ''
+				} border-0 px-4 py-4 uppercase text-sm tracking-wide whitespace-no-wrap font-sans inline-block`}
+				onClick={() => {
+					this.handleClick();
+				}}
+			>
+				<span class="align-middle font-bold">{this.column.name}</span> {icon}
+			</div>
+		);
 	}
 }
