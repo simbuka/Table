@@ -9,6 +9,12 @@ export class Table {
 
 	@Element() element: HTMLElement;
 
+	hostData() {
+		return {
+			class: 'text-grey-darkest'
+		};
+	}
+
 	render() {
 		this.element.querySelector('[slot="header"]').className +=
 			'border-b-2 border-grey-lighter';
@@ -22,7 +28,8 @@ export class Table {
 				<slot name="header" />
 				<slot name="body" />
 			</table>,
-			this.noResults && <Overlay />
+			this.noResults && <Overlay />,
+			<slot name="pagination" />
 		];
 	}
 }

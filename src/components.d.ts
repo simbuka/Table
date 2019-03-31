@@ -20,6 +20,9 @@ import {
 import {
   IOnSortChange,
 } from './components/table-header-cell/IOnSortChange';
+import {
+  IOnPageChange,
+} from './components/table-pagination/IOnPageChange';
 
 
 export namespace Components {
@@ -57,6 +60,18 @@ export namespace Components {
     'columns'?: Array<IHeaderColumn>;
   }
 
+  interface SflTablePagination {
+    'activeNext': boolean;
+    'activePrevious': boolean;
+    'foundText': string;
+  }
+  interface SflTablePaginationAttributes extends StencilHTMLAttributes {
+    'activeNext'?: boolean;
+    'activePrevious'?: boolean;
+    'foundText': string;
+    'onOnPageChange'?: (event: CustomEvent<IOnPageChange>) => void;
+  }
+
   interface SflTable {
     'noResults': boolean;
   }
@@ -71,6 +86,7 @@ declare global {
     'SflTableBodyRow': Components.SflTableBodyRow;
     'SflTableHeaderCell': Components.SflTableHeaderCell;
     'SflTableHeaderRow': Components.SflTableHeaderRow;
+    'SflTablePagination': Components.SflTablePagination;
     'SflTable': Components.SflTable;
   }
 
@@ -79,6 +95,7 @@ declare global {
     'sfl-table-body-row': Components.SflTableBodyRowAttributes;
     'sfl-table-header-cell': Components.SflTableHeaderCellAttributes;
     'sfl-table-header-row': Components.SflTableHeaderRowAttributes;
+    'sfl-table-pagination': Components.SflTablePaginationAttributes;
     'sfl-table': Components.SflTableAttributes;
   }
 
@@ -107,6 +124,12 @@ declare global {
     new (): HTMLSflTableHeaderRowElement;
   };
 
+  interface HTMLSflTablePaginationElement extends Components.SflTablePagination, HTMLStencilElement {}
+  var HTMLSflTablePaginationElement: {
+    prototype: HTMLSflTablePaginationElement;
+    new (): HTMLSflTablePaginationElement;
+  };
+
   interface HTMLSflTableElement extends Components.SflTable, HTMLStencilElement {}
   var HTMLSflTableElement: {
     prototype: HTMLSflTableElement;
@@ -118,6 +141,7 @@ declare global {
     'sfl-table-body-row': HTMLSflTableBodyRowElement
     'sfl-table-header-cell': HTMLSflTableHeaderCellElement
     'sfl-table-header-row': HTMLSflTableHeaderRowElement
+    'sfl-table-pagination': HTMLSflTablePaginationElement
     'sfl-table': HTMLSflTableElement
   }
 
@@ -126,6 +150,7 @@ declare global {
     'sfl-table-body-row': HTMLSflTableBodyRowElement;
     'sfl-table-header-cell': HTMLSflTableHeaderCellElement;
     'sfl-table-header-row': HTMLSflTableHeaderRowElement;
+    'sfl-table-pagination': HTMLSflTablePaginationElement;
     'sfl-table': HTMLSflTableElement;
   }
 

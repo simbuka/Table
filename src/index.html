@@ -15,7 +15,7 @@
 		<script src="/build/table.js"></script>
 	</head>
 	<body>
-		<div class="flex flex-row mt-16 mx-4">
+		<div class="flex flex-row mt-12 mx-4">
 			<sfl-table id="table1" class="w-full mx-8">
 				<div slot="header">
 					<sfl-table-header-row>
@@ -91,6 +91,10 @@
 						</div>
 					</sfl-table-body-row>
 				</div>
+
+				<div slot="pagination">
+					<sfl-table-pagination></sfl-table-pagination>
+				</div>
 			</sfl-table>
 
 			<sfl-table id="table2" class="w-full mx-8">
@@ -162,7 +166,7 @@
 				}
 			];
 			const columns = [
-				{ name: 'Family name', sort: 'none' },
+				{ name: 'Family name', sort: 'asc' },
 				{ name: 'Given name', sort: 'none' },
 				{ name: 'Birth name', sort: 'none' }
 			];
@@ -174,13 +178,25 @@
 				row.row = rows[index];
 			});
 
-			document
-				.querySelector('sfl-table#table1')
-				.addEventListener('onSortChange', event => {
+			const pagination1 = document.querySelector(
+				'sfl-table#table1 sfl-table-pagination'
+			);
+			pagination1.foundText = 'Showing 1 - 8 (11 results were found in total)';
+			pagination1.activeNext = true;
+
+			document.querySelector('sfl-table#table2').noResults = true;
+
+			document.querySelectorAll('sfl-table').forEach(table => {
+				table.addEventListener('onSortChange', event => {
 					event.stopPropagation();
 					console.log('Event onSortChange:', event.detail);
 				});
-			document.querySelector('sfl-table#table2').noResults = true;
+
+				table.addEventListener('onPageChange', event => {
+					event.stopPropagation();
+					console.log('Event onPageChange:', event.detail);
+				});
+			});
 		</script>
 	</body>
 </html>

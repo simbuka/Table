@@ -9,7 +9,7 @@ export class TableHeaderRow {
 
 	hostData() {
 		return {
-			class: 'text-base border-grey-lighter border-b text-grey-darkest font-sans',
+			class: 'text-base border-grey-lighter border-b font-sans',
 			style: { display: 'table-row' }
 		};
 	}
