@@ -7,7 +7,7 @@ export const Overlay: FunctionalComponent<{
 	return (
 		<div
 			style={{ height: `${height}px` }}
-			class="text-center text-xl py-4 border-grey-lighter border-b flex items-center align-middle "
+			class="flex items-center align-middle text-center text-xl py-4 border-grey-lighter border-b "
 		>
 			<div class="w-full">{content}</div>
 		</div>

@@ -1,11 +1,14 @@
 import { Component, Element, Prop } from '@stencil/core';
 import { Overlay } from './helpers/Overlay';
+import { Loader } from './helpers/Loader';
 
 @Component({
-	tag: 'sfl-table'
+	tag: 'sfl-table',
+	styleUrl: 'table.css'
 })
 export class Table {
 	@Prop() noResults: boolean = false;
+	@Prop() loading: boolean = false;
 	@Prop() bodyRowCount: number = 10;
 	@Prop() bodyRowHeight: number = 51;
 
@@ -13,15 +16,15 @@ export class Table {
 
 	hostData() {
 		return {
-			class: 'block text-grey-darkest'
+			class: 'relative block text-grey-darkest'
 		};
 	}
 
 	render() {
-		this.element.querySelector('[slot="header"]').className +=
-			'border-b-2 border-grey-lighter';
-		(this.element.querySelector('[slot="header"]') as HTMLElement).style.display =
-			'table-header-group';
+		const headerSlot = this.element.querySelector('[slot="header"]') as HTMLElement;
+		headerSlot.className += 'border-b-2 border-grey-lighter';
+		headerSlot.style.display = 'table-header-group';
+
 		(this.element.querySelector('[slot="body"]') as HTMLElement).style.display =
 			'table-row-group';
 
@@ -33,6 +36,7 @@ export class Table {
 			this.noResults && (
 				<Overlay height={this.bodyRowHeight * this.bodyRowCount} />
 			),
+			this.loading && <Loader height={this.bodyRowHeight * this.bodyRowCount} />,
 			<slot name="pagination" />
 		];
 	}
