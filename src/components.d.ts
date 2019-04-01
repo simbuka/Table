@@ -28,60 +28,144 @@ import {
 export namespace Components {
 
   interface SflTableBodyCell {
+    /**
+    * Body cell value
+    */
     'value': string;
   }
   interface SflTableBodyCellAttributes extends StencilHTMLAttributes {
+    /**
+    * Body cell value
+    */
     'value': string;
   }
 
   interface SflTableBodyRow {
+    /**
+    * Row data
+    */
     'row': IBodyRow;
   }
   interface SflTableBodyRowAttributes extends StencilHTMLAttributes {
+    /**
+    * Row data
+    */
     'row': IBodyRow;
   }
 
   interface SflTableHeaderCell {
+    /**
+    * Column data
+    */
     'column': IHeaderColumn;
+    /**
+    * Cell key unique key
+    */
     'key': number;
+    /**
+    * Tells if cell is sortable
+    */
     'sortable': boolean;
   }
   interface SflTableHeaderCellAttributes extends StencilHTMLAttributes {
+    /**
+    * Column data
+    */
     'column': IHeaderColumn;
+    /**
+    * Cell key unique key
+    */
     'key': number;
+    /**
+    * Emitted when sorting changes
+    */
     'onOnSortChange'?: (event: CustomEvent<IOnSortChange>) => void;
+    /**
+    * Tells if cell is sortable
+    */
     'sortable'?: boolean;
   }
 
   interface SflTableHeaderRow {
+    /**
+    * Columns list
+    */
     'columns': Array<IHeaderColumn>;
   }
   interface SflTableHeaderRowAttributes extends StencilHTMLAttributes {
+    /**
+    * Columns list
+    */
     'columns'?: Array<IHeaderColumn>;
   }
 
   interface SflTablePagination {
+    /**
+    * Tells if next page button should be active
+    */
     'activeNext': boolean;
+    /**
+    * Tells if previous page button should be active
+    */
     'activePrevious': boolean;
+    /**
+    * Text for total results found
+    */
     'foundText': string;
   }
   interface SflTablePaginationAttributes extends StencilHTMLAttributes {
+    /**
+    * Tells if next page button should be active
+    */
     'activeNext'?: boolean;
+    /**
+    * Tells if previous page button should be active
+    */
     'activePrevious'?: boolean;
+    /**
+    * Text for total results found
+    */
     'foundText': string;
+    /**
+    * Emitted when clicked on previous or next page button
+    */
     'onOnPageChange'?: (event: CustomEvent<IOnPageChange>) => void;
   }
 
   interface SflTable {
+    /**
+    * Amount of rows are shown in table body
+    */
     'bodyRowCount': number;
+    /**
+    * Body row height
+    */
     'bodyRowHeight': number;
+    /**
+    * Tells if table is loading
+    */
     'loading': boolean;
+    /**
+    * Tells if to show no results overlay
+    */
     'noResults': boolean;
   }
   interface SflTableAttributes extends StencilHTMLAttributes {
+    /**
+    * Amount of rows are shown in table body
+    */
     'bodyRowCount'?: number;
+    /**
+    * Body row height
+    */
     'bodyRowHeight'?: number;
+    /**
+    * Tells if table is loading
+    */
     'loading'?: boolean;
+    /**
+    * Tells if to show no results overlay
+    */
     'noResults'?: boolean;
   }
 }

@@ -6,10 +6,22 @@ import { IOnSortChange } from './IOnSortChange';
 	tag: 'sfl-table-header-cell'
 })
 export class TableHeaderCell {
+	/**
+	 * Cell key unique key
+	 */
 	@Prop() key!: number;
+	/**
+	 * Column data
+	 */
 	@Prop() column!: IHeaderColumn;
+	/**
+	 * Tells if cell is sortable
+	 */
 	@Prop() sortable: boolean = true;
 
+	/**
+	 * Emitted when sorting changes
+	 */
 	@Event() onSortChange: EventEmitter<IOnSortChange>;
 
 	private handleClick() {

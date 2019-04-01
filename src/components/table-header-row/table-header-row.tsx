@@ -5,6 +5,9 @@ import { IHeaderColumn } from '../table-header-cell/IHeaderColumn';
 	tag: 'sfl-table-header-row'
 })
 export class TableHeaderRow {
+	/**
+	 * Columns list
+	 */
 	@Prop() columns: Array<IHeaderColumn>;
 
 	hostData() {

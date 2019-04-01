@@ -5,6 +5,9 @@ import { capitalize } from '../../utils/utils';
 	tag: 'sfl-table-body-cell'
 })
 export class TableBodyCell {
+	/**
+	 * Body cell value
+	 */
 	@Prop() value!: string;
 
 	hostData() {

@@ -5,10 +5,22 @@ import { IOnPageChange } from './IOnPageChange';
 	tag: 'sfl-table-pagination'
 })
 export class TablePagination {
+	/**
+	 * Text for total results found
+	 */
 	@Prop() foundText!: string;
+	/**
+	 * Tells if previous page button should be active
+	 */
 	@Prop() activePrevious: boolean = false;
+	/**
+	 * Tells if next page button should be active
+	 */
 	@Prop() activeNext: boolean = false;
 
+	/**
+	 * Emitted when clicked on previous or next page button
+	 */
 	@Event() onPageChange: EventEmitter<IOnPageChange>;
 
 	private arrowIcon(direction: 'left' | 'right') {

@@ -5,6 +5,9 @@ import { IBodyRow } from './IBodyRow';
 	tag: 'sfl-table-body-row'
 })
 export class TableBodyRow {
+	/**
+	 * Row data
+	 */
 	@Prop() row!: IBodyRow;
 
 	hostData() {

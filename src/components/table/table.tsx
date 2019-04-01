@@ -7,9 +7,21 @@ import { Loader } from './helpers/Loader';
 	styleUrl: 'table.css'
 })
 export class Table {
+	/**
+	 * Tells if to show no results overlay
+	 */
 	@Prop() noResults: boolean = false;
+	/**
+	 * Tells if table is loading
+	 */
 	@Prop() loading: boolean = false;
+	/**
+	 * Amount of rows are shown in table body
+	 */
 	@Prop() bodyRowCount: number = 10;
+	/**
+	 * Body row height
+	 */
 	@Prop() bodyRowHeight: number = 51;
 
 	@Element() element: HTMLElement;
