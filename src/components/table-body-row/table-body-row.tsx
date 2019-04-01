@@ -17,21 +17,23 @@ export class TableBodyRow {
 		};
 	}
 
-	render() {
-		return [
+	private rowItem(slot: string) {
+		return (
 			<td class="align-middle w-px whitespace-no-wrap">
 				<div class="flex justify-between">
-					<slot name="checkbox" />
+					<slot name={slot} />
 				</div>
-			</td>,
+			</td>
+		);
+	}
+
+	render() {
+		return [
+			this.rowItem('checkbox'),
 			this.row.values.map((value: string) => (
 				<sfl-table-body-cell value={value} />
 			)),
-			<td class="align-middle w-px whitespace-no-wrap">
-				<div class="flex justify-between">
-					<slot name="buttons" />
-				</div>
-			</td>
+			this.rowItem('buttons')
 		];
 	}
 }

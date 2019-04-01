@@ -3,7 +3,7 @@ import { FunctionalComponent } from '@stencil/core';
 export const Loader: FunctionalComponent<{ height: number }> = ({ height }) => {
 	return (
 		<div
-			style={{ height: `${height}px`, marginTop: `-${height}px` }}
+			style={{ marginTop: `-${height}px`, height: `${height}px` }}
 			class="absolute w-full flex items-center align-middle text-center bg-white opacity-75"
 		>
 			<div class="w-full">

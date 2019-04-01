@@ -37,8 +37,8 @@ export class Table {
 		headerSlot.className += 'border-b-2 border-grey-lighter';
 		headerSlot.style.display = 'table-header-group';
 
-		(this.element.querySelector('[slot="body"]') as HTMLElement).style.display =
-			'table-row-group';
+		const bodySlot = this.element.querySelector('[slot="body"]') as HTMLElement;
+		bodySlot.style.display = 'table-row-group';
 
 		return [
 			<table class="w-full bg-grey-lightest">

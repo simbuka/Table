@@ -23,14 +23,14 @@ export class TablePagination {
 	 */
 	@Event() onPageChange: EventEmitter<IOnPageChange>;
 
-	private arrowIcon(direction: 'left' | 'right') {
+	private arrowIcon(type: 'previous' | 'next') {
 		return (
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
 				class="h-5 align-middle"
 				style={{
-					transform: direction === 'left' ? 'rotate(180deg)' : ''
+					transform: type === 'previous' ? 'rotate(180deg)' : ''
 				}}
 			>
 				<path
@@ -41,49 +41,39 @@ export class TablePagination {
 		);
 	}
 
-	render() {
-		const buttonClass =
-			'bg-white p-1 m-3 border-grey-light border rounded-full uppercase font-bold';
-
-		const previousButton = (
+	private createButton({
+		type,
+		active
+	}: {
+		type: 'previous' | 'next';
+		active: boolean;
+	}) {
+		return (
 			<div
 				class={`
-                    ${buttonClass}
-                    ${
-						this.activePrevious
-							? 'cursor-pointer hover:bg-grey-light'
-							: 'opacity-50'
-					}
+					bg-white p-1 m-3 border-grey-light border rounded-full uppercase font-bold
+                    ${active ? 'cursor-pointer hover:bg-grey-light' : 'opacity-50'}
                 `}
 				onClick={() => {
 					if (this.activePrevious) {
-						this.onPageChange.emit({ direction: 'previous' });
+						this.onPageChange.emit({ direction: type });
 					}
 				}}
 			>
-				{this.arrowIcon('left')}
+				{this.arrowIcon(type)}
 			</div>
 		);
+	}
 
-		const nextButton = (
-			<div
-				class={`
-                    ${buttonClass}
-                    ${
-						this.activeNext
-							? 'cursor-pointer hover:bg-grey-light'
-							: 'opacity-50'
-					}
-                `}
-				onClick={() => {
-					if (this.activeNext) {
-						this.onPageChange.emit({ direction: 'next' });
-					}
-				}}
-			>
-				{this.arrowIcon('right')}
-			</div>
-		);
+	render() {
+		const previousButton = this.createButton({
+			type: 'previous',
+			active: this.activePrevious
+		});
+		const nextButton = this.createButton({
+			type: 'next',
+			active: this.activeNext
+		});
 
 		return (
 			<div class="flex items-center align-middle text-center text-sm bg-grey-lightest border-grey-lighter border-t">

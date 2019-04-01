@@ -59,12 +59,12 @@ export class TableHeaderCell {
 			<div
 				class={`${
 					this.sortable ? ' cursor-pointer select-none ' : ''
-				} border-0 px-4 py-4 uppercase text-sm tracking-wide whitespace-no-wrap font-sans inline-block`}
+				} border-0 px-4 py-4 uppercase text-sm tracking-wide whitespace-no-wrap font-sans inline-block font-bold`}
 				onClick={() => {
 					this.handleClick();
 				}}
 			>
-				<span class="align-middle font-bold">{this.column.name}</span> {icon}
+				<span class="align-middle">{this.column.name}</span> {icon}
 			</div>
 		);
 	}
