@@ -73,9 +73,13 @@ export namespace Components {
   }
 
   interface SflTable {
+    'bodyRowCount': number;
+    'bodyRowHeight': number;
     'noResults': boolean;
   }
   interface SflTableAttributes extends StencilHTMLAttributes {
+    'bodyRowCount'?: number;
+    'bodyRowHeight'?: number;
     'noResults'?: boolean;
   }
 }

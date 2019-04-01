@@ -90,14 +90,33 @@
 							&times;
 						</div>
 					</sfl-table-body-row>
+					<sfl-table-body-row>
+						<div slot="checkbox" class="pl-4">
+							<input type="checkbox" />
+						</div>
+						<div slot="buttons" class="px-4 text-2xl cursor-pointer">
+							&times;
+						</div>
+					</sfl-table-body-row>
+					<sfl-table-body-row>
+						<div slot="checkbox" class="pl-4">
+							<input type="checkbox" />
+						</div>
+						<div slot="buttons" class="px-4 text-2xl cursor-pointer">
+							&times;
+						</div>
+					</sfl-table-body-row>
 				</div>
 
 				<div slot="pagination">
-					<sfl-table-pagination></sfl-table-pagination>
+					<sfl-table-pagination
+						found-text="Showing 1 - 10 (11 results were found in total)"
+						active-next="true"
+					></sfl-table-pagination>
 				</div>
 			</sfl-table>
 
-			<sfl-table id="table2" class="w-full mx-8">
+			<sfl-table id="table2" class="w-full mx-8" no-results="true">
 				<div slot="header">
 					<sfl-table-header-row>
 						<div slot="checkbox" class="pl-4">
@@ -107,6 +126,12 @@
 				</div>
 
 				<div slot="body"></div>
+
+				<div slot="pagination">
+					<sfl-table-pagination
+						found-text="Showing 0 - 0 (11 results were found in total)"
+					></sfl-table-pagination>
+				</div>
 			</sfl-table>
 		</div>
 
@@ -151,18 +176,6 @@
 				{
 					values: ['Mfura', 'Yves', '1995-05-01'],
 					instanceId: 10
-				},
-				{
-					values: ['Zanden', 'Mark', '1990-01-01'],
-					instanceId: 11
-				},
-				{
-					values: ['test', 'test', '1990-01-30'],
-					instanceId: 12
-				},
-				{
-					values: ['Willems', 'Kim', '1988-05-25'],
-					instanceId: 13
 				}
 			];
 			const columns = [
@@ -177,14 +190,6 @@
 			document.querySelectorAll('sfl-table-body-row').forEach((row, index) => {
 				row.row = rows[index];
 			});
-
-			const pagination1 = document.querySelector(
-				'sfl-table#table1 sfl-table-pagination'
-			);
-			pagination1.foundText = 'Showing 1 - 8 (11 results were found in total)';
-			pagination1.activeNext = true;
-
-			document.querySelector('sfl-table#table2').noResults = true;
 
 			document.querySelectorAll('sfl-table').forEach(table => {
 				table.addEventListener('onSortChange', event => {

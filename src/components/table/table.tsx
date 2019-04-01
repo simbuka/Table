@@ -6,12 +6,14 @@ import { Overlay } from './helpers/Overlay';
 })
 export class Table {
 	@Prop() noResults: boolean = false;
+	@Prop() bodyRowCount: number = 10;
+	@Prop() bodyRowHeight: number = 51;
 
 	@Element() element: HTMLElement;
 
 	hostData() {
 		return {
-			class: 'text-grey-darkest'
+			class: 'block text-grey-darkest'
 		};
 	}
 
@@ -28,7 +30,9 @@ export class Table {
 				<slot name="header" />
 				<slot name="body" />
 			</table>,
-			this.noResults && <Overlay />,
+			this.noResults && (
+				<Overlay height={this.bodyRowHeight * this.bodyRowCount} />
+			),
 			<slot name="pagination" />
 		];
 	}
