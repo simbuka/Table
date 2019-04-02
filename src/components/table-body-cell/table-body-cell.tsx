@@ -1,5 +1,4 @@
 import { Component, Prop } from '@stencil/core';
-import { capitalize } from '../../utils/utils';
 
 @Component({
 	tag: 'sfl-table-body-cell'
@@ -18,6 +17,6 @@ export class TableBodyCell {
 	}
 
 	render() {
-		return capitalize(this.value);
+		return this.value;
 	}
 }
