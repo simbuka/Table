@@ -4,6 +4,8 @@
 
 Basic components to easily build good looking table.
 
+![alt text](sfl-table-screenshot.png)
+
 #### Features
 
 -   Loader
