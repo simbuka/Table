@@ -33,54 +33,54 @@ npm install --save @simbuka/table
 
 # Usage
 
-You can find more examples at [`src/components/index.html`](src/components/index.html)
+You can find more examples at [`src/index.html`](src/components/index.html)
 
 ```html
 <!-- Simple table with pagination -->
 <sfl-table>
-	<thead>
-		<sfl-table-header-row>
-			<sfl-table-header-cell>
-				Family name
-			</sfl-table-header-cell>
-			<sfl-table-header-cell>
-				Given name
-			</sfl-table-header-cell>
-			<sfl-table-header-cell>
-				Birth name
-			</sfl-table-header-cell>
-		</sfl-table-header-row>
-	</thead>
+  <thead>
+    <sfl-table-header-row>
+      <sfl-table-header-cell>
+        Family name
+      </sfl-table-header-cell>
+      <sfl-table-header-cell>
+        Given name
+      </sfl-table-header-cell>
+      <sfl-table-header-cell>
+        Birth name
+      </sfl-table-header-cell>
+    </sfl-table-header-row>
+  </thead>
 
-	<tbody>
-		<sfl-table-body-row>
-			<sfl-table-body-cell>
-				Green
-			</sfl-table-body-cell>
-			<sfl-table-body-cell>
-				Tom
-			</sfl-table-body-cell>
-			<sfl-table-body-cell>
-				1972-12-07
-			</sfl-table-body-cell>
-		</sfl-table-body-row>
+  <tbody>
+    <sfl-table-body-row>
+      <sfl-table-body-cell>
+        Green
+      </sfl-table-body-cell>
+      <sfl-table-body-cell>
+        Tom
+      </sfl-table-body-cell>
+      <sfl-table-body-cell>
+        1972-12-07
+      </sfl-table-body-cell>
+    </sfl-table-body-row>
 
-		<sfl-table-body-row>
-			<sfl-table-body-cell>
-				Cooper
-			</sfl-table-body-cell>
-			<sfl-table-body-cell>
-				Martin
-			</sfl-table-body-cell>
-			<sfl-table-body-cell>
-				1993-01-22
-			</sfl-table-body-cell>
-		</sfl-table-body-row>
-	</tbody>
+    <sfl-table-body-row>
+      <sfl-table-body-cell>
+        Cooper
+      </sfl-table-body-cell>
+      <sfl-table-body-cell>
+        Martin
+      </sfl-table-body-cell>
+      <sfl-table-body-cell>
+        1993-01-22
+      </sfl-table-body-cell>
+    </sfl-table-body-row>
+  </tbody>
 
-	<sfl-table-pagination
-		slot="pagination"
-		found-text="Showing 0 - 0 (11 results were found in total)"
-	></sfl-table-pagination>
+  <sfl-table-pagination
+    slot="pagination"
+    found-text="Showing 0 - 0 (11 results were found in total)"
+  ></sfl-table-pagination>
 </sfl-table>
 ```
