@@ -33,7 +33,7 @@ npm install --save @simbuka/table
 
 # Usage
 
-You can find more examples at [`src/index.html`](src/components/index.html)
+You can find more examples at [`src/index.html`](src/index.html)
 
 ```html
 <!-- Simple table with pagination -->
