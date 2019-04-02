@@ -1,5 +1,4 @@
 import { Component, Prop, Event, EventEmitter } from '@stencil/core';
-import { IHeaderColumn } from './IHeaderColumn';
 import { IOnSortChange } from './IOnSortChange';
 
 @Component({
@@ -11,13 +10,9 @@ export class TableHeaderCell {
 	 */
 	@Prop() key!: number;
 	/**
-	 * Column data
+	 * Sort type
 	 */
-	@Prop() column!: IHeaderColumn;
-	/**
-	 * Tells if cell is sortable
-	 */
-	@Prop() sortable: boolean = true;
+	@Prop() sort: '' | 'none' | 'asc' | 'desc' = '';
 
 	/**
 	 * Emitted when sorting changes
@@ -32,6 +27,7 @@ export class TableHeaderCell {
 
 	hostData() {
 		return {
+			class: 'border-b-2 border-grey-lighter',
 			style: { display: 'table-cell' }
 		};
 	}
@@ -41,10 +37,11 @@ export class TableHeaderCell {
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 100 100"
-				class={`h-2 ml-1 align-middle ${this.column.sort === 'none' &&
+				class={`h-2 ml-1 align-middle ${(this.sort === '' ||
+					this.sort === 'none') &&
 					'hidden'}`}
 				style={{
-					transform: this.column.sort === 'asc' ? 'rotate(180deg)' : ''
+					transform: this.sort === 'asc' ? 'rotate(180deg)' : ''
 				}}
 			>
 				<switch>
@@ -58,13 +55,18 @@ export class TableHeaderCell {
 		return (
 			<div
 				class={`${
-					this.sortable ? ' cursor-pointer select-none ' : ''
-				} border-0 px-4 py-4 uppercase text-sm tracking-wide whitespace-no-wrap font-sans inline-block font-bold`}
+					this.sort === '' ? '' : ' cursor-pointer select-none '
+				} m-4 uppercase text-sm tracking-wide whitespace-no-wrap font-sans inline-block font-bold`}
 				onClick={() => {
-					this.handleClick();
+					if (this.sort !== '') {
+						this.handleClick();
+					}
 				}}
 			>
-				<span class="align-middle">{this.column.name}</span> {icon}
+				<span class="align-middle">
+					<slot />
+				</span>{' '}
+				{icon}
 			</div>
 		);
 	}

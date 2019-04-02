@@ -33,17 +33,9 @@ export class Table {
 	}
 
 	render() {
-		const headerSlot = this.element.querySelector('[slot="header"]') as HTMLElement;
-		headerSlot.className += 'border-b-2 border-grey-lighter';
-		headerSlot.style.display = 'table-header-group';
-
-		const bodySlot = this.element.querySelector('[slot="body"]') as HTMLElement;
-		bodySlot.style.display = 'table-row-group';
-
 		return [
 			<table class="w-full bg-grey-lightest">
-				<slot name="header" />
-				<slot name="body" />
+				<slot />
 			</table>,
 			this.noResults && (
 				<Overlay height={this.bodyRowHeight * this.bodyRowCount} />

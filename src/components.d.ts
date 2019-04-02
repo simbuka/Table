@@ -9,12 +9,6 @@ import '@stencil/core';
 
 
 import {
-  IBodyRow,
-} from './components/table-body-row/IBodyRow';
-import {
-  IHeaderColumn,
-} from './components/table-header-cell/IHeaderColumn';
-import {
   EventEmitter,
 } from '@stencil/core';
 import {
@@ -27,51 +21,23 @@ import {
 
 export namespace Components {
 
-  interface SflTableBodyCell {
-    /**
-    * Body cell value
-    */
-    'value': string;
-  }
-  interface SflTableBodyCellAttributes extends StencilHTMLAttributes {
-    /**
-    * Body cell value
-    */
-    'value': string;
-  }
+  interface SflTableBodyCell {}
+  interface SflTableBodyCellAttributes extends StencilHTMLAttributes {}
 
-  interface SflTableBodyRow {
-    /**
-    * Row data
-    */
-    'row': IBodyRow;
-  }
-  interface SflTableBodyRowAttributes extends StencilHTMLAttributes {
-    /**
-    * Row data
-    */
-    'row': IBodyRow;
-  }
+  interface SflTableBodyRow {}
+  interface SflTableBodyRowAttributes extends StencilHTMLAttributes {}
 
   interface SflTableHeaderCell {
-    /**
-    * Column data
-    */
-    'column': IHeaderColumn;
     /**
     * Cell key unique key
     */
     'key': number;
     /**
-    * Tells if cell is sortable
+    * Sort type
     */
-    'sortable': boolean;
+    'sort': '' | 'none' | 'asc' | 'desc';
   }
   interface SflTableHeaderCellAttributes extends StencilHTMLAttributes {
-    /**
-    * Column data
-    */
-    'column': IHeaderColumn;
     /**
     * Cell key unique key
     */
@@ -81,23 +47,13 @@ export namespace Components {
     */
     'onOnSortChange'?: (event: CustomEvent<IOnSortChange>) => void;
     /**
-    * Tells if cell is sortable
+    * Sort type
     */
-    'sortable'?: boolean;
+    'sort'?: '' | 'none' | 'asc' | 'desc';
   }
 
-  interface SflTableHeaderRow {
-    /**
-    * Columns list
-    */
-    'columns': Array<IHeaderColumn>;
-  }
-  interface SflTableHeaderRowAttributes extends StencilHTMLAttributes {
-    /**
-    * Columns list
-    */
-    'columns'?: Array<IHeaderColumn>;
-  }
+  interface SflTableHeaderRow {}
+  interface SflTableHeaderRowAttributes extends StencilHTMLAttributes {}
 
   interface SflTablePagination {
     /**
