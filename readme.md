@@ -80,7 +80,7 @@ You can find more examples at [`src/index.html`](src/components/index.html)
 
   <sfl-table-pagination
     slot="pagination"
-    found-text="Showing 0 - 0 (11 results were found in total)"
+    found-text="Showing 2 - 11 (11 results were found in total)"
   ></sfl-table-pagination>
 </sfl-table>
 ```
