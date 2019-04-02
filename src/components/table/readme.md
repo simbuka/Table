@@ -1,9 +1,6 @@
-# sfl-table
-
-
+# `<sfl-table>`
 
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -12,7 +9,6 @@
 | `columns`           | --        |             | `string[]`   | `[]`        |
 | `rows` _(required)_ | --        |             | `IBodyRow[]` | `undefined` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
