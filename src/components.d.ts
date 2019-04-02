@@ -29,7 +29,7 @@ export namespace Components {
 
   interface SflTableHeaderCell {
     /**
-    * Cell key unique key
+    * Cell unique key. Required if `sort` is used
     */
     'key': number;
     /**
@@ -39,9 +39,9 @@ export namespace Components {
   }
   interface SflTableHeaderCellAttributes extends StencilHTMLAttributes {
     /**
-    * Cell key unique key
+    * Cell unique key. Required if `sort` is used
     */
-    'key': number;
+    'key'?: number;
     /**
     * Emitted when sorting changes
     */

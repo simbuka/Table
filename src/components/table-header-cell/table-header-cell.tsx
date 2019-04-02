@@ -6,9 +6,9 @@ import { IOnSortChange } from './IOnSortChange';
 })
 export class TableHeaderCell {
 	/**
-	 * Cell key unique key
+	 * Cell unique key. Required if `sort` is used
 	 */
-	@Prop() key!: number;
+	@Prop() key: number;
 	/**
 	 * Sort type
 	 */
@@ -65,7 +65,7 @@ export class TableHeaderCell {
 			>
 				<span class="align-middle">
 					<slot />
-				</span>{' '}
+				</span>
 				{icon}
 			</div>
 		);
