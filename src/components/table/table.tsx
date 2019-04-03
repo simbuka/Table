@@ -22,7 +22,7 @@ export class Table {
 	/**
 	 * Body row height
 	 */
-	@Prop() bodyRowHeight: number = 51;
+	@Prop() bodyRowHeight: number = 50;
 
 	@Element() element: HTMLElement;
 
@@ -34,7 +34,7 @@ export class Table {
 
 	render() {
 		return [
-			<table class="w-full bg-grey-lightest">
+			<table class="w-full bg-grey-lightest border-b border-grey-lighter">
 				<slot />
 			</table>,
 			this.noResults && (

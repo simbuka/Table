@@ -21,8 +21,18 @@ import {
 
 export namespace Components {
 
-  interface SflTableBodyCell {}
-  interface SflTableBodyCellAttributes extends StencilHTMLAttributes {}
+  interface SflTableBodyCell {
+    /**
+    * Tells if to put default padding of cell
+    */
+    'noPadding': boolean;
+  }
+  interface SflTableBodyCellAttributes extends StencilHTMLAttributes {
+    /**
+    * Tells if to put default padding of cell
+    */
+    'noPadding'?: boolean;
+  }
 
   interface SflTableBodyRow {}
   interface SflTableBodyRowAttributes extends StencilHTMLAttributes {}
