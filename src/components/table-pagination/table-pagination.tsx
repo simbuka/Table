@@ -55,7 +55,7 @@ export class TablePagination {
                     ${active ? 'cursor-pointer hover:bg-grey-light' : 'opacity-50'}
                 `}
 				onClick={() => {
-					if (this.activePrevious) {
+					if (active) {
 						this.onPageChange.emit({ direction: type });
 					}
 				}}
