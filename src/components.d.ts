@@ -35,7 +35,7 @@ export namespace Components {
     /**
     * Sort type
     */
-    'sort': '' | 'none' | 'asc' | 'desc';
+    'sort': 'none' | 'asc' | 'desc' | '';
   }
   interface SflTableHeaderCellAttributes extends StencilHTMLAttributes {
     /**
@@ -49,7 +49,7 @@ export namespace Components {
     /**
     * Sort type
     */
-    'sort'?: '' | 'none' | 'asc' | 'desc';
+    'sort'?: 'none' | 'asc' | 'desc' | '';
   }
 
   interface SflTableHeaderRow {}

@@ -2,13 +2,17 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
-| Property            | Attribute | Description | Type         | Default     |
-| ------------------- | --------- | ----------- | ------------ | ----------- |
-| `columns`           | --        |             | `string[]`   | `[]`        |
-| `rows` _(required)_ | --        |             | `IBodyRow[]` | `undefined` |
+| Property        | Attribute         | Description                            | Type      | Default |
+| --------------- | ----------------- | -------------------------------------- | --------- | ------- |
+| `bodyRowCount`  | `body-row-count`  | Amount of rows are shown in table body | `number`  | `10`    |
+| `bodyRowHeight` | `body-row-height` | Body row height                        | `number`  | `51`    |
+| `loading`       | `loading`         | Tells if table is loading              | `boolean` | `false` |
+| `noResults`     | `no-results`      | Tells if to show no results overlay    | `boolean` | `false` |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

@@ -12,7 +12,7 @@ export class TableHeaderCell {
 	/**
 	 * Sort type
 	 */
-	@Prop() sort: '' | 'none' | 'asc' | 'desc' = '';
+	@Prop() sort: 'none' | 'asc' | 'desc' | '' = '';
 
 	/**
 	 * Emitted when sorting changes
