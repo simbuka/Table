@@ -3,8 +3,8 @@ import { FunctionalComponent } from '@stencil/core';
 export const Loader: FunctionalComponent<{ height: number }> = ({ height }) => {
 	return (
 		<div
-			style={{ marginTop: `-${height}px`, height: `${height}px` }}
-			class="absolute w-full flex items-center align-middle text-center bg-white opacity-75"
+			style={{ marginTop: `-${height + 1}px`, height: `${height}px` }}
+			class="absolute w-full flex items-center align-middle z-10 text-center bg-white opacity-75"
 		>
 			<div class="w-full">
 				<svg viewBox="0 0 24 24" class="table-loader w-12">
