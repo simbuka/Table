@@ -37,9 +37,11 @@ export class TableHeaderCell {
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 100 100"
-				class={`h-2 ml-1 align-middle ${(this.sort === '' ||
-					this.sort === 'none') &&
-					'hidden'}`}
+				class={`
+					h-2 ml-1 align-middle
+					${this.sort === '' && 'hidden'}
+					${this.sort === 'none' && 'opacity-0'}
+				`}
 				style={{
 					transform: this.sort === 'asc' ? 'rotate(180deg)' : ''
 				}}
