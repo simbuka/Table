@@ -5,7 +5,7 @@ import { Component, Prop } from '@stencil/core';
 })
 export class Td {
 	/**
-	 * Tells if to put default padding of cell
+	 * Tells if to add default padding of cell
 	 */
 	@Prop() noPadding: boolean = false;
 

@@ -93,13 +93,13 @@ export namespace Components {
 
   interface SmbTd {
     /**
-    * Tells if to put default padding of cell
+    * Tells if to add default padding of cell
     */
     'noPadding': boolean;
   }
   interface SmbTdAttributes extends StencilHTMLAttributes {
     /**
-    * Tells if to put default padding of cell
+    * Tells if to add default padding of cell
     */
     'noPadding'?: boolean;
   }

@@ -1,4 +1,4 @@
-# `<smb-table>`
+# `smb-table`
 
 <!-- Auto Generated Below -->
 
