@@ -1,4 +1,4 @@
-# `<sfl-table>`
+# `<smb-table>`
 
 <!-- Auto Generated Below -->
 

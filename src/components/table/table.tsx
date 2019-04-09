@@ -3,7 +3,7 @@ import { Overlay } from './helpers/Overlay';
 import { Loader } from './helpers/Loader';
 
 @Component({
-	tag: 'sfl-table',
+	tag: 'smb-table',
 	styleUrl: 'table.css'
 })
 export class Table {

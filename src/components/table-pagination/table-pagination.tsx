@@ -2,7 +2,7 @@ import { Component, Prop, Event, EventEmitter } from '@stencil/core';
 import { IOnPageChange } from './IOnPageChange';
 
 @Component({
-	tag: 'sfl-table-pagination'
+	tag: 'smb-table-pagination'
 })
 export class TablePagination {
 	/**

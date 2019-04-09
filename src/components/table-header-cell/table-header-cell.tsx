@@ -2,7 +2,7 @@ import { Component, Prop, Event, EventEmitter } from '@stencil/core';
 import { IOnSortChange } from './IOnSortChange';
 
 @Component({
-	tag: 'sfl-table-header-cell'
+	tag: 'smb-table-header-cell'
 })
 export class TableHeaderCell {
 	/**

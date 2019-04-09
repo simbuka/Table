@@ -21,23 +21,23 @@ import {
 
 export namespace Components {
 
-  interface SflTableBodyCell {
+  interface SmbTableBodyCell {
     /**
     * Tells if to put default padding of cell
     */
     'noPadding': boolean;
   }
-  interface SflTableBodyCellAttributes extends StencilHTMLAttributes {
+  interface SmbTableBodyCellAttributes extends StencilHTMLAttributes {
     /**
     * Tells if to put default padding of cell
     */
     'noPadding'?: boolean;
   }
 
-  interface SflTableBodyRow {}
-  interface SflTableBodyRowAttributes extends StencilHTMLAttributes {}
+  interface SmbTableBodyRow {}
+  interface SmbTableBodyRowAttributes extends StencilHTMLAttributes {}
 
-  interface SflTableHeaderCell {
+  interface SmbTableHeaderCell {
     /**
     * Cell unique key. Required if `sort` is used
     */
@@ -47,7 +47,7 @@ export namespace Components {
     */
     'sort': 'none' | 'asc' | 'desc' | '';
   }
-  interface SflTableHeaderCellAttributes extends StencilHTMLAttributes {
+  interface SmbTableHeaderCellAttributes extends StencilHTMLAttributes {
     /**
     * Cell unique key. Required if `sort` is used
     */
@@ -62,10 +62,10 @@ export namespace Components {
     'sort'?: 'none' | 'asc' | 'desc' | '';
   }
 
-  interface SflTableHeaderRow {}
-  interface SflTableHeaderRowAttributes extends StencilHTMLAttributes {}
+  interface SmbTableHeaderRow {}
+  interface SmbTableHeaderRowAttributes extends StencilHTMLAttributes {}
 
-  interface SflTablePagination {
+  interface SmbTablePagination {
     /**
     * Tells if next page button should be active
     */
@@ -79,7 +79,7 @@ export namespace Components {
     */
     'foundText': string;
   }
-  interface SflTablePaginationAttributes extends StencilHTMLAttributes {
+  interface SmbTablePaginationAttributes extends StencilHTMLAttributes {
     /**
     * Tells if next page button should be active
     */
@@ -98,7 +98,7 @@ export namespace Components {
     'onOnPageChange'?: (event: CustomEvent<IOnPageChange>) => void;
   }
 
-  interface SflTable {
+  interface SmbTable {
     /**
     * Amount of rows are shown in table body
     */
@@ -116,7 +116,7 @@ export namespace Components {
     */
     'noResults': boolean;
   }
-  interface SflTableAttributes extends StencilHTMLAttributes {
+  interface SmbTableAttributes extends StencilHTMLAttributes {
     /**
     * Amount of rows are shown in table body
     */
@@ -138,76 +138,76 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
-    'SflTableBodyCell': Components.SflTableBodyCell;
-    'SflTableBodyRow': Components.SflTableBodyRow;
-    'SflTableHeaderCell': Components.SflTableHeaderCell;
-    'SflTableHeaderRow': Components.SflTableHeaderRow;
-    'SflTablePagination': Components.SflTablePagination;
-    'SflTable': Components.SflTable;
+    'SmbTableBodyCell': Components.SmbTableBodyCell;
+    'SmbTableBodyRow': Components.SmbTableBodyRow;
+    'SmbTableHeaderCell': Components.SmbTableHeaderCell;
+    'SmbTableHeaderRow': Components.SmbTableHeaderRow;
+    'SmbTablePagination': Components.SmbTablePagination;
+    'SmbTable': Components.SmbTable;
   }
 
   interface StencilIntrinsicElements {
-    'sfl-table-body-cell': Components.SflTableBodyCellAttributes;
-    'sfl-table-body-row': Components.SflTableBodyRowAttributes;
-    'sfl-table-header-cell': Components.SflTableHeaderCellAttributes;
-    'sfl-table-header-row': Components.SflTableHeaderRowAttributes;
-    'sfl-table-pagination': Components.SflTablePaginationAttributes;
-    'sfl-table': Components.SflTableAttributes;
+    'smb-table-body-cell': Components.SmbTableBodyCellAttributes;
+    'smb-table-body-row': Components.SmbTableBodyRowAttributes;
+    'smb-table-header-cell': Components.SmbTableHeaderCellAttributes;
+    'smb-table-header-row': Components.SmbTableHeaderRowAttributes;
+    'smb-table-pagination': Components.SmbTablePaginationAttributes;
+    'smb-table': Components.SmbTableAttributes;
   }
 
 
-  interface HTMLSflTableBodyCellElement extends Components.SflTableBodyCell, HTMLStencilElement {}
-  var HTMLSflTableBodyCellElement: {
-    prototype: HTMLSflTableBodyCellElement;
-    new (): HTMLSflTableBodyCellElement;
+  interface HTMLSmbTableBodyCellElement extends Components.SmbTableBodyCell, HTMLStencilElement {}
+  var HTMLSmbTableBodyCellElement: {
+    prototype: HTMLSmbTableBodyCellElement;
+    new (): HTMLSmbTableBodyCellElement;
   };
 
-  interface HTMLSflTableBodyRowElement extends Components.SflTableBodyRow, HTMLStencilElement {}
-  var HTMLSflTableBodyRowElement: {
-    prototype: HTMLSflTableBodyRowElement;
-    new (): HTMLSflTableBodyRowElement;
+  interface HTMLSmbTableBodyRowElement extends Components.SmbTableBodyRow, HTMLStencilElement {}
+  var HTMLSmbTableBodyRowElement: {
+    prototype: HTMLSmbTableBodyRowElement;
+    new (): HTMLSmbTableBodyRowElement;
   };
 
-  interface HTMLSflTableHeaderCellElement extends Components.SflTableHeaderCell, HTMLStencilElement {}
-  var HTMLSflTableHeaderCellElement: {
-    prototype: HTMLSflTableHeaderCellElement;
-    new (): HTMLSflTableHeaderCellElement;
+  interface HTMLSmbTableHeaderCellElement extends Components.SmbTableHeaderCell, HTMLStencilElement {}
+  var HTMLSmbTableHeaderCellElement: {
+    prototype: HTMLSmbTableHeaderCellElement;
+    new (): HTMLSmbTableHeaderCellElement;
   };
 
-  interface HTMLSflTableHeaderRowElement extends Components.SflTableHeaderRow, HTMLStencilElement {}
-  var HTMLSflTableHeaderRowElement: {
-    prototype: HTMLSflTableHeaderRowElement;
-    new (): HTMLSflTableHeaderRowElement;
+  interface HTMLSmbTableHeaderRowElement extends Components.SmbTableHeaderRow, HTMLStencilElement {}
+  var HTMLSmbTableHeaderRowElement: {
+    prototype: HTMLSmbTableHeaderRowElement;
+    new (): HTMLSmbTableHeaderRowElement;
   };
 
-  interface HTMLSflTablePaginationElement extends Components.SflTablePagination, HTMLStencilElement {}
-  var HTMLSflTablePaginationElement: {
-    prototype: HTMLSflTablePaginationElement;
-    new (): HTMLSflTablePaginationElement;
+  interface HTMLSmbTablePaginationElement extends Components.SmbTablePagination, HTMLStencilElement {}
+  var HTMLSmbTablePaginationElement: {
+    prototype: HTMLSmbTablePaginationElement;
+    new (): HTMLSmbTablePaginationElement;
   };
 
-  interface HTMLSflTableElement extends Components.SflTable, HTMLStencilElement {}
-  var HTMLSflTableElement: {
-    prototype: HTMLSflTableElement;
-    new (): HTMLSflTableElement;
+  interface HTMLSmbTableElement extends Components.SmbTable, HTMLStencilElement {}
+  var HTMLSmbTableElement: {
+    prototype: HTMLSmbTableElement;
+    new (): HTMLSmbTableElement;
   };
 
   interface HTMLElementTagNameMap {
-    'sfl-table-body-cell': HTMLSflTableBodyCellElement
-    'sfl-table-body-row': HTMLSflTableBodyRowElement
-    'sfl-table-header-cell': HTMLSflTableHeaderCellElement
-    'sfl-table-header-row': HTMLSflTableHeaderRowElement
-    'sfl-table-pagination': HTMLSflTablePaginationElement
-    'sfl-table': HTMLSflTableElement
+    'smb-table-body-cell': HTMLSmbTableBodyCellElement
+    'smb-table-body-row': HTMLSmbTableBodyRowElement
+    'smb-table-header-cell': HTMLSmbTableHeaderCellElement
+    'smb-table-header-row': HTMLSmbTableHeaderRowElement
+    'smb-table-pagination': HTMLSmbTablePaginationElement
+    'smb-table': HTMLSmbTableElement
   }
 
   interface ElementTagNameMap {
-    'sfl-table-body-cell': HTMLSflTableBodyCellElement;
-    'sfl-table-body-row': HTMLSflTableBodyRowElement;
-    'sfl-table-header-cell': HTMLSflTableHeaderCellElement;
-    'sfl-table-header-row': HTMLSflTableHeaderRowElement;
-    'sfl-table-pagination': HTMLSflTablePaginationElement;
-    'sfl-table': HTMLSflTableElement;
+    'smb-table-body-cell': HTMLSmbTableBodyCellElement;
+    'smb-table-body-row': HTMLSmbTableBodyRowElement;
+    'smb-table-header-cell': HTMLSmbTableHeaderCellElement;
+    'smb-table-header-row': HTMLSmbTableHeaderRowElement;
+    'smb-table-pagination': HTMLSmbTablePaginationElement;
+    'smb-table': HTMLSmbTableElement;
   }
 
 

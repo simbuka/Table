@@ -1,7 +1,7 @@
 import { Component, Prop } from '@stencil/core';
 
 @Component({
-	tag: 'sfl-table-body-cell'
+	tag: 'smb-table-body-cell'
 })
 export class TableBodyCell {
 	/**

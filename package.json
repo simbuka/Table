@@ -1,7 +1,7 @@
 {
-	"name": "functionaltable",
+	"name": "@simbuka/table",
 	"version": "0.0.1",
-	"description": "Simbuka Frontend Functional Table library",
+	"description": "Simbuka Table",
 	"module": "dist/esm/index.js",
 	"main": "dist/index.js",
 	"unpkg": "dist/ionic.js",
@@ -20,5 +20,6 @@
 	"devDependencies": {
 		"@stencil/core": "~0.16.2"
 	},
+	"author": "Simbuka Team",
 	"license": "MIT"
 }

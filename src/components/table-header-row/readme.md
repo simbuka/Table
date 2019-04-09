@@ -1,6 +1,4 @@
-# sfl-table-header-row
-
-
+# smb-table-header-row
 
 <!-- Auto Generated Below -->
 

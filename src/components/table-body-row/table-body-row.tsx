@@ -1,7 +1,7 @@
 import { Component } from '@stencil/core';
 
 @Component({
-	tag: 'sfl-table-body-row'
+	tag: 'smb-table-body-row'
 })
 export class TableBodyRow {
 	hostData() {
