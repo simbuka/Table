@@ -1,9 +1,9 @@
 import { Component } from '@stencil/core';
 
 @Component({
-	tag: 'smb-table-body-row'
+	tag: 'smb-tr'
 })
-export class TableBodyRow {
+export class Tr {
 	hostData() {
 		return {
 			class: 'text-base border-0 bg-white font-sans',

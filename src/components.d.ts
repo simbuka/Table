@@ -12,58 +12,14 @@ import {
   EventEmitter,
 } from '@stencil/core';
 import {
-  IOnSortChange,
-} from './components/table-header-cell/IOnSortChange';
-import {
   IOnPageChange,
 } from './components/table-pagination/IOnPageChange';
+import {
+  IOnSortChange,
+} from './components/th/IOnSortChange';
 
 
 export namespace Components {
-
-  interface SmbTableBodyCell {
-    /**
-    * Tells if to put default padding of cell
-    */
-    'noPadding': boolean;
-  }
-  interface SmbTableBodyCellAttributes extends StencilHTMLAttributes {
-    /**
-    * Tells if to put default padding of cell
-    */
-    'noPadding'?: boolean;
-  }
-
-  interface SmbTableBodyRow {}
-  interface SmbTableBodyRowAttributes extends StencilHTMLAttributes {}
-
-  interface SmbTableHeaderCell {
-    /**
-    * Cell unique key. Required if `sort` is used
-    */
-    'key': number;
-    /**
-    * Sort type
-    */
-    'sort': 'none' | 'asc' | 'desc' | '';
-  }
-  interface SmbTableHeaderCellAttributes extends StencilHTMLAttributes {
-    /**
-    * Cell unique key. Required if `sort` is used
-    */
-    'key'?: number;
-    /**
-    * Emitted when sorting changes
-    */
-    'onOnSortChange'?: (event: CustomEvent<IOnSortChange>) => void;
-    /**
-    * Sort type
-    */
-    'sort'?: 'none' | 'asc' | 'desc' | '';
-  }
-
-  interface SmbTableHeaderRow {}
-  interface SmbTableHeaderRowAttributes extends StencilHTMLAttributes {}
 
   interface SmbTablePagination {
     /**
@@ -134,51 +90,66 @@ export namespace Components {
     */
     'noResults'?: boolean;
   }
+
+  interface SmbTd {
+    /**
+    * Tells if to put default padding of cell
+    */
+    'noPadding': boolean;
+  }
+  interface SmbTdAttributes extends StencilHTMLAttributes {
+    /**
+    * Tells if to put default padding of cell
+    */
+    'noPadding'?: boolean;
+  }
+
+  interface SmbTh {
+    /**
+    * Cell unique key. Required if `sort` is used
+    */
+    'key': number;
+    /**
+    * Sort type
+    */
+    'sort': 'none' | 'asc' | 'desc' | '';
+  }
+  interface SmbThAttributes extends StencilHTMLAttributes {
+    /**
+    * Cell unique key. Required if `sort` is used
+    */
+    'key'?: number;
+    /**
+    * Emitted when sorting changes
+    */
+    'onOnSortChange'?: (event: CustomEvent<IOnSortChange>) => void;
+    /**
+    * Sort type
+    */
+    'sort'?: 'none' | 'asc' | 'desc' | '';
+  }
+
+  interface SmbTr {}
+  interface SmbTrAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'SmbTableBodyCell': Components.SmbTableBodyCell;
-    'SmbTableBodyRow': Components.SmbTableBodyRow;
-    'SmbTableHeaderCell': Components.SmbTableHeaderCell;
-    'SmbTableHeaderRow': Components.SmbTableHeaderRow;
     'SmbTablePagination': Components.SmbTablePagination;
     'SmbTable': Components.SmbTable;
+    'SmbTd': Components.SmbTd;
+    'SmbTh': Components.SmbTh;
+    'SmbTr': Components.SmbTr;
   }
 
   interface StencilIntrinsicElements {
-    'smb-table-body-cell': Components.SmbTableBodyCellAttributes;
-    'smb-table-body-row': Components.SmbTableBodyRowAttributes;
-    'smb-table-header-cell': Components.SmbTableHeaderCellAttributes;
-    'smb-table-header-row': Components.SmbTableHeaderRowAttributes;
     'smb-table-pagination': Components.SmbTablePaginationAttributes;
     'smb-table': Components.SmbTableAttributes;
+    'smb-td': Components.SmbTdAttributes;
+    'smb-th': Components.SmbThAttributes;
+    'smb-tr': Components.SmbTrAttributes;
   }
 
-
-  interface HTMLSmbTableBodyCellElement extends Components.SmbTableBodyCell, HTMLStencilElement {}
-  var HTMLSmbTableBodyCellElement: {
-    prototype: HTMLSmbTableBodyCellElement;
-    new (): HTMLSmbTableBodyCellElement;
-  };
-
-  interface HTMLSmbTableBodyRowElement extends Components.SmbTableBodyRow, HTMLStencilElement {}
-  var HTMLSmbTableBodyRowElement: {
-    prototype: HTMLSmbTableBodyRowElement;
-    new (): HTMLSmbTableBodyRowElement;
-  };
-
-  interface HTMLSmbTableHeaderCellElement extends Components.SmbTableHeaderCell, HTMLStencilElement {}
-  var HTMLSmbTableHeaderCellElement: {
-    prototype: HTMLSmbTableHeaderCellElement;
-    new (): HTMLSmbTableHeaderCellElement;
-  };
-
-  interface HTMLSmbTableHeaderRowElement extends Components.SmbTableHeaderRow, HTMLStencilElement {}
-  var HTMLSmbTableHeaderRowElement: {
-    prototype: HTMLSmbTableHeaderRowElement;
-    new (): HTMLSmbTableHeaderRowElement;
-  };
 
   interface HTMLSmbTablePaginationElement extends Components.SmbTablePagination, HTMLStencilElement {}
   var HTMLSmbTablePaginationElement: {
@@ -192,22 +163,38 @@ declare global {
     new (): HTMLSmbTableElement;
   };
 
+  interface HTMLSmbTdElement extends Components.SmbTd, HTMLStencilElement {}
+  var HTMLSmbTdElement: {
+    prototype: HTMLSmbTdElement;
+    new (): HTMLSmbTdElement;
+  };
+
+  interface HTMLSmbThElement extends Components.SmbTh, HTMLStencilElement {}
+  var HTMLSmbThElement: {
+    prototype: HTMLSmbThElement;
+    new (): HTMLSmbThElement;
+  };
+
+  interface HTMLSmbTrElement extends Components.SmbTr, HTMLStencilElement {}
+  var HTMLSmbTrElement: {
+    prototype: HTMLSmbTrElement;
+    new (): HTMLSmbTrElement;
+  };
+
   interface HTMLElementTagNameMap {
-    'smb-table-body-cell': HTMLSmbTableBodyCellElement
-    'smb-table-body-row': HTMLSmbTableBodyRowElement
-    'smb-table-header-cell': HTMLSmbTableHeaderCellElement
-    'smb-table-header-row': HTMLSmbTableHeaderRowElement
     'smb-table-pagination': HTMLSmbTablePaginationElement
     'smb-table': HTMLSmbTableElement
+    'smb-td': HTMLSmbTdElement
+    'smb-th': HTMLSmbThElement
+    'smb-tr': HTMLSmbTrElement
   }
 
   interface ElementTagNameMap {
-    'smb-table-body-cell': HTMLSmbTableBodyCellElement;
-    'smb-table-body-row': HTMLSmbTableBodyRowElement;
-    'smb-table-header-cell': HTMLSmbTableHeaderCellElement;
-    'smb-table-header-row': HTMLSmbTableHeaderRowElement;
     'smb-table-pagination': HTMLSmbTablePaginationElement;
     'smb-table': HTMLSmbTableElement;
+    'smb-td': HTMLSmbTdElement;
+    'smb-th': HTMLSmbThElement;
+    'smb-tr': HTMLSmbTrElement;
   }
 
 

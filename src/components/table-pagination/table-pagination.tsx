@@ -33,7 +33,7 @@ export class TablePagination {
 		return (
 			<div
 				class={`
-					p-1 m-3 uppercase font-bold
+					p-1 m-3 uppercase font-bold text-grey-darkest
                     ${active ? 'cursor-pointer hover:bg-grey-light' : 'opacity-50'}
                 `}
 				onClick={() => {

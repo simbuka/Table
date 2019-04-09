@@ -1,9 +1,9 @@
 import { Component, Prop } from '@stencil/core';
 
 @Component({
-	tag: 'smb-table-body-cell'
+	tag: 'smb-td'
 })
-export class TableBodyCell {
+export class Td {
 	/**
 	 * Tells if to put default padding of cell
 	 */

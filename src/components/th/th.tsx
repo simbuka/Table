@@ -2,9 +2,9 @@ import { Component, Prop, Event, EventEmitter } from '@stencil/core';
 import { IOnSortChange } from './IOnSortChange';
 
 @Component({
-	tag: 'smb-table-header-cell'
+	tag: 'smb-th'
 })
-export class TableHeaderCell {
+export class Th {
 	/**
 	 * Cell unique key. Required if `sort` is used
 	 */
@@ -27,7 +27,7 @@ export class TableHeaderCell {
 
 	hostData() {
 		return {
-			class: 'border-b-2 border-grey-lighter',
+			class: 'border-b-2 border-grey-lighter bg-grey-lightest',
 			style: { display: 'table-cell' }
 		};
 	}

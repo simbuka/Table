@@ -1,4 +1,4 @@
-# smb-table-header-cell
+# smb-th
 
 <!-- Auto Generated Below -->
 

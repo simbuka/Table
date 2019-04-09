@@ -15,7 +15,7 @@ Basic components to easily build good looking front-end table.
 
 #### Events
 
--   [`onSortChange`](src/components/table-header-cell)
+-   [`onSortChange`](src/components/th)
 -   [`onPageChange`](src/components/table-pagination)
 
 # Installation
@@ -27,11 +27,10 @@ npm install --save @simbuka/table
 # Components
 
 -   [`smb-table`](src/components/table) (instead of `<table>`)
--   [`smb-table-header-cell`](src/components/table-header-cell) (instead of `<th>`)
--   [`smb-table-header-row`](src/components/table-header-row) (instead of `<tr>`)
--   [`smb-table-body-cell`](src/components/table-body-cell) (instead of `<td>`)
--   [`smb-table-body-row`](src/components/table-body-row) (instead of `<tr>`)
--   [`smb-table-pagination`](src/components/table-pagination)
+-   [`smb-th`](src/components/th) (instead of `<th>`)
+-   [`smb-td`](src/components/td) (instead of `<td>`)
+-   [`smb-tr`](src/components/tr) (instead of `<tr>`)
+-   [`smb-pagination`](src/components/table-pagination)
 
 # Usage
 
@@ -41,48 +40,48 @@ You can find more examples at [`src/index.html`](src/index.html)
 <!-- Simple table with pagination -->
 <smb-table>
 	<thead>
-		<smb-table-header-row>
-			<smb-table-header-cell>
+		<smb-tr>
+			<smb-th>
 				Family name
-			</smb-table-header-cell>
-			<smb-table-header-cell>
+			</smb-th>
+			<smb-th>
 				Given name
-			</smb-table-header-cell>
-			<smb-table-header-cell>
+			</smb-th>
+			<smb-th>
 				Birth name
-			</smb-table-header-cell>
-		</smb-table-header-row>
+			</smb-th>
+		</smb-tr>
 	</thead>
 
 	<tbody>
-		<smb-table-body-row>
-			<smb-table-body-cell>
+		<smb-tr>
+			<smb-td>
 				Green
-			</smb-table-body-cell>
-			<smb-table-body-cell>
+			</smb-td>
+			<smb-td>
 				Tom
-			</smb-table-body-cell>
-			<smb-table-body-cell>
+			</smb-td>
+			<smb-td>
 				1972-12-07
-			</smb-table-body-cell>
-		</smb-table-body-row>
+			</smb-td>
+		</smb-tr>
 
-		<smb-table-body-row>
-			<smb-table-body-cell>
+		<smb-tr>
+			<smb-td>
 				Cooper
-			</smb-table-body-cell>
-			<smb-table-body-cell>
+			</smb-td>
+			<smb-td>
 				Martin
-			</smb-table-body-cell>
-			<smb-table-body-cell>
+			</smb-td>
+			<smb-td>
 				1993-01-22
-			</smb-table-body-cell>
-		</smb-table-body-row>
+			</smb-td>
+		</smb-tr>
 	</tbody>
 
-	<smb-table-pagination
+	<smb-pagination
 		slot="pagination"
 		found-text="Showing 2 - 11 (11 results were found in total)"
-	></smb-table-pagination>
+	></smb-pagination>
 </smb-table>
 ```
