@@ -57,6 +57,13 @@ export class TablePagination {
 		);
 	}
 
+	hostData() {
+		return {
+			class:
+				'flex items-center align-middle text-center text-sm bg-grey-lightest border-grey-lighter border-t'
+		};
+	}
+
 	render() {
 		const previousButton = this.createButton({
 			type: 'previous',
@@ -69,12 +76,10 @@ export class TablePagination {
 			label: this.labelNext
 		});
 
-		return (
-			<div class="flex items-center align-middle text-center text-sm bg-grey-lightest border-grey-lighter border-t">
-				{previousButton}
-				<div class="flex-1 p-1">{this.foundText}</div>
-				{nextButton}
-			</div>
-		);
+		return [
+			previousButton,
+			<div class="flex-1 p-1">{this.foundText}</div>,
+			nextButton
+		];
 	}
 }
