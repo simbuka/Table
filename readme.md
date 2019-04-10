@@ -23,6 +23,7 @@ Basic components to easily build good looking front-end table.
 ```
 npm install --save @simbuka/table
 ```
+#### IMPORTANT: this library uses CSS library [`Tailwind CSS`](https://tailwindcss.com/docs/installation). You must install it manually.
 
 # Components
 
