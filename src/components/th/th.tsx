@@ -10,7 +10,7 @@ export class Th {
 	 */
 	@Prop() key: number;
 	/**
-	 * Sort type
+	 * Sort type. Leave empty to disable sort
 	 */
 	@Prop() sort: 'none' | 'asc' | 'desc' | '' = '';
 

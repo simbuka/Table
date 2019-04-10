@@ -8,7 +8,7 @@
 | Property | Attribute | Description                                 | Type                              | Default     |
 | -------- | --------- | ------------------------------------------- | --------------------------------- | ----------- |
 | `key`    | `key`     | Cell unique key. Required if `sort` is used | `number`                          | `undefined` |
-| `sort`   | `sort`    | Sort type                                   | `"" \| "asc" \| "desc" \| "none"` | `''`        |
+| `sort`   | `sort`    | Sort type. Leave empty to disable sort      | `"" \| "asc" \| "desc" \| "none"` | `''`        |
 
 
 ## Events

@@ -126,7 +126,7 @@ export namespace Components {
     */
     'key': number;
     /**
-    * Sort type
+    * Sort type. Leave empty to disable sort
     */
     'sort': 'none' | 'asc' | 'desc' | '';
   }
@@ -140,7 +140,7 @@ export namespace Components {
     */
     'onOnSortChange'?: (event: CustomEvent<IOnSortChange>) => void;
     /**
-    * Sort type
+    * Sort type. Leave empty to disable sort
     */
     'sort'?: 'none' | 'asc' | 'desc' | '';
   }
