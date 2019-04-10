@@ -17,6 +17,14 @@ export class TablePagination {
 	 * Tells if next page button should be active
 	 */
 	@Prop() activeNext: boolean = false;
+	/**
+	 * Label for previous button
+	 */
+	@Prop() labelPrevious: string = 'Previous';
+	/**
+	 * Label for next button
+	 */
+	@Prop() labelNext: string = 'Next';
 
 	/**
 	 * Emitted when clicked on previous or next page button
@@ -25,16 +33,18 @@ export class TablePagination {
 
 	private createButton({
 		type,
-		active
+		active,
+		label
 	}: {
 		type: 'previous' | 'next';
 		active: boolean;
+		label: string;
 	}) {
 		return (
 			<div
 				class={`
 					p-1 m-3 uppercase font-bold text-grey-darkest
-                    ${active ? 'cursor-pointer hover:bg-grey-light' : 'opacity-50'}
+                    ${active ? 'cursor-pointer hover:text-grey-darker' : 'opacity-50'}
                 `}
 				onClick={() => {
 					if (active) {
@@ -42,7 +52,7 @@ export class TablePagination {
 					}
 				}}
 			>
-				{type}
+				{label}
 			</div>
 		);
 	}
@@ -50,11 +60,13 @@ export class TablePagination {
 	render() {
 		const previousButton = this.createButton({
 			type: 'previous',
-			active: this.activePrevious
+			active: this.activePrevious,
+			label: this.labelPrevious
 		});
 		const nextButton = this.createButton({
 			type: 'next',
-			active: this.activeNext
+			active: this.activeNext,
+			label: this.labelNext
 		});
 
 		return (

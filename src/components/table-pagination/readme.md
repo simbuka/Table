@@ -5,11 +5,13 @@
 
 ## Properties
 
-| Property                 | Attribute         | Description                                    | Type      | Default     |
-| ------------------------ | ----------------- | ---------------------------------------------- | --------- | ----------- |
-| `activeNext`             | `active-next`     | Tells if next page button should be active     | `boolean` | `false`     |
-| `activePrevious`         | `active-previous` | Tells if previous page button should be active | `boolean` | `false`     |
-| `foundText` _(required)_ | `found-text`      | Text for total results found                   | `string`  | `undefined` |
+| Property                 | Attribute         | Description                                    | Type      | Default      |
+| ------------------------ | ----------------- | ---------------------------------------------- | --------- | ------------ |
+| `activeNext`             | `active-next`     | Tells if next page button should be active     | `boolean` | `false`      |
+| `activePrevious`         | `active-previous` | Tells if previous page button should be active | `boolean` | `false`      |
+| `foundText` _(required)_ | `found-text`      | Text for total results found                   | `string`  | `undefined`  |
+| `labelNext`              | `label-next`      | Label for next button                          | `string`  | `'Next'`     |
+| `labelPrevious`          | `label-previous`  | Label for previous button                      | `string`  | `'Previous'` |
 
 
 ## Events

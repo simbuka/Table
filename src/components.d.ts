@@ -34,6 +34,14 @@ export namespace Components {
     * Text for total results found
     */
     'foundText': string;
+    /**
+    * Label for next button
+    */
+    'labelNext': string;
+    /**
+    * Label for previous button
+    */
+    'labelPrevious': string;
   }
   interface SmbTablePaginationAttributes extends StencilHTMLAttributes {
     /**
@@ -48,6 +56,14 @@ export namespace Components {
     * Text for total results found
     */
     'foundText': string;
+    /**
+    * Label for next button
+    */
+    'labelNext'?: string;
+    /**
+    * Label for previous button
+    */
+    'labelPrevious'?: string;
     /**
     * Emitted when clicked on previous or next page button
     */
