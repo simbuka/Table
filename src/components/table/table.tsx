@@ -34,9 +34,9 @@ export class Table {
 
 	render() {
 		return [
-			<table class="w-full bg-grey-lightest border-b border-grey-lighter">
+			<div class="w-full bg-grey-lightest border-b border-grey-lighter">
 				<slot />
-			</table>,
+			</div>,
 			this.noResults && (
 				<Overlay height={this.bodyRowHeight * this.bodyRowCount} />
 			),

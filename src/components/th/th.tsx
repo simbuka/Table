@@ -13,6 +13,14 @@ export class Th {
 	 * Sort type. Leave empty to disable sort
 	 */
 	@Prop() sort: 'none' | 'asc' | 'desc' | '' = '';
+	/**
+	 * Tells if to set flex to 1
+	 */
+	@Prop() shrink: boolean = false;
+	/**
+	 * Tells if to add default spacing of cell
+	 */
+	@Prop() noSpacing: boolean = false;
 
 	/**
 	 * Emitted when sorting changes
@@ -27,8 +35,10 @@ export class Th {
 
 	hostData() {
 		return {
-			class: 'border-b-2 border-grey-lighter bg-grey-lightest',
-			style: { display: 'table-cell' }
+			class: `
+				${!this.shrink && 'flex-1'}
+				flex justify-center border-b-2 border-grey-lighter bg-grey-lightest
+			`
 		};
 	}
 
@@ -58,17 +68,20 @@ export class Th {
 			<div
 				class={`${
 					this.sort === '' ? '' : ' cursor-pointer select-none '
-				} m-4 uppercase text-sm tracking-wide whitespace-no-wrap font-sans inline-block font-bold`}
+				} flex w-full justify-center flex-col ${!this.noSpacing &&
+					'm-4'} uppercase text-sm font-bold`}
 				onClick={() => {
 					if (this.sort !== '') {
 						this.handleClick();
 					}
 				}}
 			>
-				<span class="align-middle">
-					<slot />
-				</span>
-				{icon}
+				<div>
+					<span class="align-middle">
+						<slot />
+					</span>
+					{icon}
+				</div>
 			</div>
 		);
 	}

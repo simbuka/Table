@@ -109,15 +109,23 @@ export namespace Components {
 
   interface SmbTd {
     /**
-    * Tells if to add default padding of cell
+    * Tells if to add default spacing of cell
     */
-    'noPadding': boolean;
+    'noSpacing': boolean;
+    /**
+    * Tells if to set flex to 1
+    */
+    'shrink': boolean;
   }
   interface SmbTdAttributes extends StencilHTMLAttributes {
     /**
-    * Tells if to add default padding of cell
+    * Tells if to add default spacing of cell
     */
-    'noPadding'?: boolean;
+    'noSpacing'?: boolean;
+    /**
+    * Tells if to set flex to 1
+    */
+    'shrink'?: boolean;
   }
 
   interface SmbTh {
@@ -125,6 +133,14 @@ export namespace Components {
     * Cell unique key. Required if `sort` is used
     */
     'key': number;
+    /**
+    * Tells if to add default spacing of cell
+    */
+    'noSpacing': boolean;
+    /**
+    * Tells if to set flex to 1
+    */
+    'shrink': boolean;
     /**
     * Sort type. Leave empty to disable sort
     */
@@ -136,9 +152,17 @@ export namespace Components {
     */
     'key'?: number;
     /**
+    * Tells if to add default spacing of cell
+    */
+    'noSpacing'?: boolean;
+    /**
     * Emitted when sorting changes
     */
     'onOnSortChange'?: (event: CustomEvent<IOnSortChange>) => void;
+    /**
+    * Tells if to set flex to 1
+    */
+    'shrink'?: boolean;
     /**
     * Sort type. Leave empty to disable sort
     */

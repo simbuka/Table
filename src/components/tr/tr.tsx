@@ -6,8 +6,7 @@ import { Component } from '@stencil/core';
 export class Tr {
 	hostData() {
 		return {
-			class: 'text-base border-0 bg-white font-sans',
-			style: { display: 'table-row' }
+			class: 'text-base border-0 bg-white font-sans flex'
 		};
 	}
 }

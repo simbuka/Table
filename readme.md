@@ -23,14 +23,15 @@ Basic components to easily build good looking front-end table.
 ```
 npm install --save @simbuka/table
 ```
+
 #### IMPORTANT: this library uses CSS library [`Tailwind CSS`](https://tailwindcss.com/docs/installation). You must install it manually.
 
 # Components
 
 -   [`smb-table`](src/components/table) (instead of `<table>`)
+-   [`smb-tr`](src/components/tr) (instead of `<tr>`)
 -   [`smb-th`](src/components/th) (instead of `<th>`)
 -   [`smb-td`](src/components/td) (instead of `<td>`)
--   [`smb-tr`](src/components/tr) (instead of `<tr>`)
 -   [`smb-pagination`](src/components/table-pagination)
 
 # Usage
@@ -40,45 +41,40 @@ You can find more examples at [`src/index.html`](src/index.html)
 ```html
 <!-- Simple table with pagination -->
 <smb-table>
-	<thead>
-		<smb-tr>
-			<smb-th>
-				Family name
-			</smb-th>
-			<smb-th>
-				Given name
-			</smb-th>
-			<smb-th>
-				Birth name
-			</smb-th>
-		</smb-tr>
-	</thead>
+	<smb-tr>
+		<smb-th>
+			Family name
+		</smb-th>
+		<smb-th>
+			Given name
+		</smb-th>
+		<smb-th>
+			Birth name
+		</smb-th>
+	</smb-tr>
 
-	<tbody>
-		<smb-tr>
-			<smb-td>
-				Green
-			</smb-td>
-			<smb-td>
-				Tom
-			</smb-td>
-			<smb-td>
-				1972-12-07
-			</smb-td>
-		</smb-tr>
-
-		<smb-tr>
-			<smb-td>
-				Cooper
-			</smb-td>
-			<smb-td>
-				Martin
-			</smb-td>
-			<smb-td>
-				1993-01-22
-			</smb-td>
-		</smb-tr>
-	</tbody>
+	<smb-tr>
+		<smb-td>
+			Green
+		</smb-td>
+		<smb-td>
+			Tom
+		</smb-td>
+		<smb-td>
+			1972-12-07
+		</smb-td>
+	</smb-tr>
+	<smb-tr>
+		<smb-td>
+			Cooper
+		</smb-td>
+		<smb-td>
+			Martin
+		</smb-td>
+		<smb-td>
+			1993-01-22
+		</smb-td>
+	</smb-tr>
 
 	<smb-pagination
 		slot="pagination"
