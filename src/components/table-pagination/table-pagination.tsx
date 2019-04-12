@@ -43,7 +43,7 @@ export class TablePagination {
 		return (
 			<div
 				class={`
-					p-1 m-3 uppercase font-bold text-grey-darkest
+					flex flex-1 p-4 uppercase font-bold text-grey-darkest
                     ${active ? 'cursor-pointer hover:text-grey-darker' : 'opacity-50'}
                 `}
 				onClick={() => {
@@ -52,7 +52,7 @@ export class TablePagination {
 					}
 				}}
 			>
-				{label}
+				<div class="flex m-auto align-middle items-center">{label}</div>
 			</div>
 		);
 	}
@@ -60,7 +60,7 @@ export class TablePagination {
 	hostData() {
 		return {
 			class:
-				'flex items-center align-middle text-center text-sm bg-grey-lightest border-grey-lighter border-t'
+				'flex text-center text-sm bg-grey-lightest border-grey-lighter border-t'
 		};
 	}
 
@@ -78,7 +78,11 @@ export class TablePagination {
 
 		return [
 			previousButton,
-			<div class="flex-1 p-1">{this.foundText}</div>,
+			<div class="flex flex-1 p-1">
+				<div class="flex m-auto align-middle items-center">
+					{this.foundText}
+				</div>
+			</div>,
 			nextButton
 		];
 	}
