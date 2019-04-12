@@ -1,6 +1,4 @@
-# smb-thead
-
-
+# `smb-thead`
 
 <!-- Auto Generated Below -->
 
