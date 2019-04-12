@@ -15,7 +15,7 @@ export class Tbody {
 	 */
 	@Prop() noResults: boolean = false;
 	/**
-	 * Overlay height
+	 * Height for no results overlay
 	 */
 	@Prop() overlayHeight: number = 150;
 

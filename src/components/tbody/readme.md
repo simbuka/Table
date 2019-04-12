@@ -1,4 +1,4 @@
-# `smb-thead`
+# `smb-tbody`
 
 <!-- Auto Generated Below -->
 
@@ -9,7 +9,7 @@
 | --------------- | ---------------- | ----------------------------------- | --------- | ------- |
 | `loading`       | `loading`        | Tells if to show loader             | `boolean` | `false` |
 | `noResults`     | `no-results`     | Tells if to show no results overlay | `boolean` | `false` |
-| `overlayHeight` | `overlay-height` | Overlay height                      | `number`  | `150`   |
+| `overlayHeight` | `overlay-height` | Height for no results overlay       | `number`  | `150`   |
 
 
 ----------------------------------------------

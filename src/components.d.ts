@@ -83,7 +83,7 @@ export namespace Components {
     */
     'noResults': boolean;
     /**
-    * Overlay height
+    * Height for no results overlay
     */
     'overlayHeight': number;
   }
@@ -97,7 +97,7 @@ export namespace Components {
     */
     'noResults'?: boolean;
     /**
-    * Overlay height
+    * Height for no results overlay
     */
     'overlayHeight'?: number;
   }
