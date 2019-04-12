@@ -1,4 +1,6 @@
-# `smb-table`
+# smb-thead
+
+
 
 <!-- Auto Generated Below -->
 

@@ -70,41 +70,36 @@ export namespace Components {
     'onOnPageChange'?: (event: CustomEvent<IOnPageChange>) => void;
   }
 
-  interface SmbTable {
+  interface SmbTable {}
+  interface SmbTableAttributes extends StencilHTMLAttributes {}
+
+  interface SmbTbody {
     /**
-    * Amount of rows are shown in table body
-    */
-    'bodyRowCount': number;
-    /**
-    * Body row height
-    */
-    'bodyRowHeight': number;
-    /**
-    * Tells if table is loading
+    * Tells if to show loader
     */
     'loading': boolean;
     /**
     * Tells if to show no results overlay
     */
     'noResults': boolean;
+    /**
+    * Overlay height
+    */
+    'overlayHeight': number;
   }
-  interface SmbTableAttributes extends StencilHTMLAttributes {
+  interface SmbTbodyAttributes extends StencilHTMLAttributes {
     /**
-    * Amount of rows are shown in table body
-    */
-    'bodyRowCount'?: number;
-    /**
-    * Body row height
-    */
-    'bodyRowHeight'?: number;
-    /**
-    * Tells if table is loading
+    * Tells if to show loader
     */
     'loading'?: boolean;
     /**
     * Tells if to show no results overlay
     */
     'noResults'?: boolean;
+    /**
+    * Overlay height
+    */
+    'overlayHeight'?: number;
   }
 
   interface SmbTd {
@@ -169,6 +164,9 @@ export namespace Components {
     'sort'?: 'none' | 'asc' | 'desc' | '';
   }
 
+  interface SmbThead {}
+  interface SmbTheadAttributes extends StencilHTMLAttributes {}
+
   interface SmbTr {}
   interface SmbTrAttributes extends StencilHTMLAttributes {}
 }
@@ -177,16 +175,20 @@ declare global {
   interface StencilElementInterfaces {
     'SmbTablePagination': Components.SmbTablePagination;
     'SmbTable': Components.SmbTable;
+    'SmbTbody': Components.SmbTbody;
     'SmbTd': Components.SmbTd;
     'SmbTh': Components.SmbTh;
+    'SmbThead': Components.SmbThead;
     'SmbTr': Components.SmbTr;
   }
 
   interface StencilIntrinsicElements {
     'smb-table-pagination': Components.SmbTablePaginationAttributes;
     'smb-table': Components.SmbTableAttributes;
+    'smb-tbody': Components.SmbTbodyAttributes;
     'smb-td': Components.SmbTdAttributes;
     'smb-th': Components.SmbThAttributes;
+    'smb-thead': Components.SmbTheadAttributes;
     'smb-tr': Components.SmbTrAttributes;
   }
 
@@ -203,6 +205,12 @@ declare global {
     new (): HTMLSmbTableElement;
   };
 
+  interface HTMLSmbTbodyElement extends Components.SmbTbody, HTMLStencilElement {}
+  var HTMLSmbTbodyElement: {
+    prototype: HTMLSmbTbodyElement;
+    new (): HTMLSmbTbodyElement;
+  };
+
   interface HTMLSmbTdElement extends Components.SmbTd, HTMLStencilElement {}
   var HTMLSmbTdElement: {
     prototype: HTMLSmbTdElement;
@@ -215,6 +223,12 @@ declare global {
     new (): HTMLSmbThElement;
   };
 
+  interface HTMLSmbTheadElement extends Components.SmbThead, HTMLStencilElement {}
+  var HTMLSmbTheadElement: {
+    prototype: HTMLSmbTheadElement;
+    new (): HTMLSmbTheadElement;
+  };
+
   interface HTMLSmbTrElement extends Components.SmbTr, HTMLStencilElement {}
   var HTMLSmbTrElement: {
     prototype: HTMLSmbTrElement;
@@ -224,16 +238,20 @@ declare global {
   interface HTMLElementTagNameMap {
     'smb-table-pagination': HTMLSmbTablePaginationElement
     'smb-table': HTMLSmbTableElement
+    'smb-tbody': HTMLSmbTbodyElement
     'smb-td': HTMLSmbTdElement
     'smb-th': HTMLSmbThElement
+    'smb-thead': HTMLSmbTheadElement
     'smb-tr': HTMLSmbTrElement
   }
 
   interface ElementTagNameMap {
     'smb-table-pagination': HTMLSmbTablePaginationElement;
     'smb-table': HTMLSmbTableElement;
+    'smb-tbody': HTMLSmbTbodyElement;
     'smb-td': HTMLSmbTdElement;
     'smb-th': HTMLSmbThElement;
+    'smb-thead': HTMLSmbTheadElement;
     'smb-tr': HTMLSmbTrElement;
   }
 
