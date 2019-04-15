@@ -33,7 +33,7 @@ npm install --save @simbuka/table
 -   [`smb-tbody`](src/components/tbody) (instead of `<tbody>`)
 -   [`smb-th`](src/components/th) (instead of `<th>`)
 -   [`smb-td`](src/components/td) (instead of `<td>`)
--   [`smb-pagination`](src/components/table-pagination)
+-   [`smb-table-pagination`](src/components/table-pagination)
 
 # Usage
 
