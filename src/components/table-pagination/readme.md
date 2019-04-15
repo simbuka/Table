@@ -1,4 +1,4 @@
-# `smb-pagination`
+# `smb-table-pagination`
 
 <!-- Auto Generated Below -->
 
