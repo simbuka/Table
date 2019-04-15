@@ -6,10 +6,6 @@ import { IOnPageChange } from './IOnPageChange';
 })
 export class TablePagination {
 	/**
-	 * Text for total results found
-	 */
-	@Prop() foundText!: string;
-	/**
 	 * Tells if previous page button should be active
 	 */
 	@Prop() activePrevious: boolean = false;
@@ -80,7 +76,7 @@ export class TablePagination {
 			previousButton,
 			<div class="flex flex-1 p-1">
 				<div class="flex m-auto align-middle items-center">
-					{this.foundText}
+					<slot />
 				</div>
 			</div>,
 			nextButton

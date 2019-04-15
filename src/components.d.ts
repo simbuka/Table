@@ -31,10 +31,6 @@ export namespace Components {
     */
     'activePrevious': boolean;
     /**
-    * Text for total results found
-    */
-    'foundText': string;
-    /**
     * Label for next button
     */
     'labelNext': string;
@@ -52,10 +48,6 @@ export namespace Components {
     * Tells if previous page button should be active
     */
     'activePrevious'?: boolean;
-    /**
-    * Text for total results found
-    */
-    'foundText': string;
     /**
     * Label for next button
     */
