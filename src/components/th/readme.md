@@ -9,7 +9,7 @@
 | ------------------ | ------------ | ------------------------------------------- | --------------------------------- | ----------- |
 | `key` _(required)_ | `key`        | Cell unique key. Required if `sort` is used | `number`                          | `undefined` |
 | `noSpacing`        | `no-spacing` | Tells if to add default spacing of cell     | `boolean`                         | `false`     |
-| `shrink`           | `shrink`     | Tells if to set flex to 1                   | `boolean`                         | `false`     |
+| `shrink`           | `shrink`     | Tells if to shrink to child's width         | `boolean`                         | `false`     |
 | `sort`             | `sort`       | Sort type. Leave empty to disable sort      | `"" \| "asc" \| "desc" \| "none"` | `''`        |
 
 
