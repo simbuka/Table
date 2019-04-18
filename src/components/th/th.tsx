@@ -15,7 +15,7 @@ export class Th {
 	 */
 	@Prop() sort: 'none' | 'asc' | 'desc' | '' = '';
 	/**
-	 * Tells if to set flex to 1
+	 * Tells if to shrink to child's width
 	 */
 	@Prop() shrink = false;
 	/**

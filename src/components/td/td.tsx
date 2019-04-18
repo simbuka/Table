@@ -9,7 +9,7 @@ export class Td {
 	 */
 	@Prop() noSpacing = false;
 	/**
-	 * Tells if to set flex to 1
+	 * Tells if to shrink to child's width
 	 */
 	@Prop() shrink = false;
 
