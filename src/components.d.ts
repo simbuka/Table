@@ -100,7 +100,7 @@ export namespace Components {
     */
     'noSpacing': boolean;
     /**
-    * Tells if to set flex to 1
+    * Tells if to shrink to child's width
     */
     'shrink': boolean;
   }
@@ -110,7 +110,7 @@ export namespace Components {
     */
     'noSpacing'?: boolean;
     /**
-    * Tells if to set flex to 1
+    * Tells if to shrink to child's width
     */
     'shrink'?: boolean;
   }
@@ -125,7 +125,7 @@ export namespace Components {
     */
     'noSpacing': boolean;
     /**
-    * Tells if to set flex to 1
+    * Tells if to shrink to child's width
     */
     'shrink': boolean;
     /**
@@ -147,7 +147,7 @@ export namespace Components {
     */
     'onOnSortChange'?: (event: CustomEvent<IOnSortChange>) => void;
     /**
-    * Tells if to set flex to 1
+    * Tells if to shrink to child's width
     */
     'shrink'?: boolean;
     /**
