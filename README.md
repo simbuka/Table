@@ -4,7 +4,7 @@
 
 Basic web component to easily style any table. Components do not have any logic like sorting, filtering or actual pagination, but it provides an upgraded look and feel to a default table by just prefixing `smb-` to all table tags.
 
-![Example](smb-table-screenshot.png)
+![Example](https://raw.githubusercontent.com/simbuka/Table/master/smb-table-screenshot.png)
 
 ## Features
 
