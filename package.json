@@ -1,7 +1,7 @@
 {
 	"name": "@simbuka/table",
-	"version": "0.0.1",
-	"description": "Simbuka Table",
+	"version": "1.0.0",
+	"description": "Basic web component to provide modern look and feel to any default table",
 	"module": "dist/esm/index.js",
 	"main": "dist/index.js",
 	"unpkg": "dist/ionic.js",
@@ -12,13 +12,10 @@
 	],
 	"scripts": {
 		"build": "stencil build --docs",
-		"start": "stencil build --dev --watch --serve --docs",
-		"test": "stencil test --spec --e2e",
-		"test.watch": "stencil test --spec --e2e --watchAll"
+		"start": "stencil build --dev --watch --serve"
 	},
-	"dependencies": {},
 	"devDependencies": {
-		"@stencil/core": "~0.16.2"
+		"@stencil/core": "0.18.1"
 	},
 	"author": "Simbuka Team",
 	"license": "MIT"
