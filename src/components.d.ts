@@ -103,6 +103,10 @@ export namespace Components {
     * Tells if to shrink to child's width
     */
     'shrink': boolean;
+    /**
+    * Tells if to add ellipsis if the content does not fit the container
+    */
+    'truncate': boolean;
   }
   interface SmbTdAttributes extends StencilHTMLAttributes {
     /**
@@ -113,6 +117,10 @@ export namespace Components {
     * Tells if to shrink to child's width
     */
     'shrink'?: boolean;
+    /**
+    * Tells if to add ellipsis if the content does not fit the container
+    */
+    'truncate'?: boolean;
   }
 
   interface SmbTh {
@@ -132,6 +140,10 @@ export namespace Components {
     * Sort type. Leave empty to disable sort
     */
     'sort': 'none' | 'asc' | 'desc' | '';
+    /**
+    * Tells if to add ellipsis if the content does not fit the container
+    */
+    'truncate': boolean;
   }
   interface SmbThAttributes extends StencilHTMLAttributes {
     /**
@@ -154,6 +166,10 @@ export namespace Components {
     * Sort type. Leave empty to disable sort
     */
     'sort'?: 'none' | 'asc' | 'desc' | '';
+    /**
+    * Tells if to add ellipsis if the content does not fit the container
+    */
+    'truncate'?: boolean;
   }
 
   interface SmbThead {}

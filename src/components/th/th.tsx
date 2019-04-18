@@ -22,6 +22,10 @@ export class Th {
 	 * Tells if to add default spacing of cell
 	 */
 	@Prop() noSpacing = false;
+	/**
+	 * Tells if to add ellipsis if the content does not fit the container
+	 */
+	@Prop() truncate = false;
 
 	/**
 	 * Emitted when sorting changes
@@ -38,6 +42,7 @@ export class Th {
 		return {
 			class: `
 				${!this.shrink && 'flex-1'}
+				${this.truncate && 'truncate'}
 				flex justify-center border-b-2 border-grey-lighter bg-grey-lightest
 			`
 		};
@@ -70,14 +75,14 @@ export class Th {
 				class={`${
 					this.sort === '' ? '' : ' cursor-pointer select-none '
 				} flex w-full justify-center flex-col ${!this.noSpacing &&
-					'm-4'} uppercase text-sm font-bold`}
+					'my-4 px-4'} uppercase text-sm font-bold`}
 				onClick={() => {
 					if (this.sort !== '') {
 						this.handleClick();
 					}
 				}}
 			>
-				<div>
+				<div class={`${this.truncate && 'truncate'}`}>
 					<span class="align-middle">
 						<slot />
 					</span>
