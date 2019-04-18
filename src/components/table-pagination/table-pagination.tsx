@@ -1,4 +1,5 @@
-import { Component, Prop, Event, EventEmitter } from '@stencil/core';
+import { Component, Event, EventEmitter, Prop } from '@stencil/core';
+
 import { IOnPageChange } from './IOnPageChange';
 
 @Component({
@@ -8,19 +9,19 @@ export class TablePagination {
 	/**
 	 * Tells if previous page button should be active
 	 */
-	@Prop() activePrevious: boolean = false;
+	@Prop() activePrevious = false;
 	/**
 	 * Tells if next page button should be active
 	 */
-	@Prop() activeNext: boolean = false;
+	@Prop() activeNext = false;
 	/**
 	 * Label for previous button
 	 */
-	@Prop() labelPrevious: string = 'Previous';
+	@Prop() labelPrevious = 'Previous';
 	/**
 	 * Label for next button
 	 */
-	@Prop() labelNext: string = 'Next';
+	@Prop() labelNext = 'Next';
 
 	/**
 	 * Emitted when clicked on previous or next page button

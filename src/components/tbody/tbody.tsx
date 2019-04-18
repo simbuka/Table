@@ -1,4 +1,5 @@
 import { Component, Prop } from '@stencil/core';
+
 import { Loader } from '../table/helpers/Loader';
 import { Overlay } from '../table/helpers/Overlay';
 
@@ -9,15 +10,15 @@ export class Tbody {
 	/**
 	 * Tells if to show loader
 	 */
-	@Prop() loading: boolean = false;
+	@Prop() loading = false;
 	/**
 	 * Tells if to show no results overlay
 	 */
-	@Prop() noResults: boolean = false;
+	@Prop() noResults = false;
 	/**
 	 * Height for no results overlay
 	 */
-	@Prop() overlayHeight: number = 150;
+	@Prop() overlayHeight = 150;
 
 	hostData() {
 		return {

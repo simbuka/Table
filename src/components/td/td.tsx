@@ -7,11 +7,11 @@ export class Td {
 	/**
 	 * Tells if to add default spacing of cell
 	 */
-	@Prop() noSpacing: boolean = false;
+	@Prop() noSpacing = false;
 	/**
 	 * Tells if to set flex to 1
 	 */
-	@Prop() shrink: boolean = false;
+	@Prop() shrink = false;
 
 	hostData() {
 		return {

@@ -1,4 +1,5 @@
-import { Component, Prop, Event, EventEmitter } from '@stencil/core';
+import { Component, Event, EventEmitter, Prop } from '@stencil/core';
+
 import { IOnSortChange } from './IOnSortChange';
 
 @Component({
@@ -16,11 +17,11 @@ export class Th {
 	/**
 	 * Tells if to set flex to 1
 	 */
-	@Prop() shrink: boolean = false;
+	@Prop() shrink = false;
 	/**
 	 * Tells if to add default spacing of cell
 	 */
-	@Prop() noSpacing: boolean = false;
+	@Prop() noSpacing = false;
 
 	/**
 	 * Emitted when sorting changes
