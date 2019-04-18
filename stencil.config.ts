@@ -7,7 +7,7 @@ export const config: Config = {
 		{ type: 'docs' },
 		{
 			type: 'www',
-			serviceWorker: null // disable service workers
+			serviceWorker: null
 		}
 	]
 };

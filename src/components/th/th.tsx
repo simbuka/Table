@@ -8,7 +8,7 @@ export class Th {
 	/**
 	 * Cell unique key. Required if `sort` is used
 	 */
-	@Prop() key: number;
+	@Prop() key!: number;
 	/**
 	 * Sort type. Leave empty to disable sort
 	 */
@@ -25,7 +25,7 @@ export class Th {
 	/**
 	 * Emitted when sorting changes
 	 */
-	@Event() onSortChange: EventEmitter<IOnSortChange>;
+	@Event() onSortChange!: EventEmitter<IOnSortChange>;
 
 	private handleClick() {
 		this.onSortChange.emit({

@@ -25,7 +25,7 @@ export class TablePagination {
 	/**
 	 * Emitted when clicked on previous or next page button
 	 */
-	@Event() onPageChange: EventEmitter<IOnPageChange>;
+	@Event() onPageChange!: EventEmitter<IOnPageChange>;
 
 	private createButton({
 		type,

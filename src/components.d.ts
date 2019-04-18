@@ -137,7 +137,7 @@ export namespace Components {
     /**
     * Cell unique key. Required if `sort` is used
     */
-    'key'?: number;
+    'key': number;
     /**
     * Tells if to add default spacing of cell
     */
