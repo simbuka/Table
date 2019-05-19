@@ -1,6 +1,6 @@
 {
 	"name": "@simbuka/table",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "Basic web component to provide modern look and feel to any default table",
 	"module": "dist/esm/index.js",
 	"main": "dist/index.js",
