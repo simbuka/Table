@@ -1,6 +1,7 @@
 import { Component, Event, EventEmitter, Prop } from '@stencil/core';
 
 import { IOnSortChange } from './IOnSortChange';
+import { ISortType } from './ISortType';
 
 @Component({
 	tag: 'smb-th'
@@ -13,7 +14,7 @@ export class Th {
 	/**
 	 * Sort type. Leave empty to disable sort
 	 */
-	@Prop() sort: 'none' | 'asc' | 'desc' | '' = '';
+	@Prop() sort: ISortType = '';
 	/**
 	 * Tells if to shrink to child's width
 	 */

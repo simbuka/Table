@@ -15,6 +15,9 @@ import {
   IOnPageChange,
 } from './components/table-pagination/IOnPageChange';
 import {
+  ISortType,
+} from './components/th/ISortType';
+import {
   IOnSortChange,
 } from './components/th/IOnSortChange';
 
@@ -139,7 +142,7 @@ export namespace Components {
     /**
     * Sort type. Leave empty to disable sort
     */
-    'sort': 'none' | 'asc' | 'desc' | '';
+    'sort': ISortType;
     /**
     * Tells if to add ellipsis if the content does not fit the container
     */
@@ -165,7 +168,7 @@ export namespace Components {
     /**
     * Sort type. Leave empty to disable sort
     */
-    'sort'?: 'none' | 'asc' | 'desc' | '';
+    'sort'?: ISortType;
     /**
     * Tells if to add ellipsis if the content does not fit the container
     */
