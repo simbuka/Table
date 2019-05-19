@@ -44,7 +44,7 @@ export class Th {
 			class: `
 				${!this.shrink && 'flex-1'}
 				${this.truncate && 'truncate'}
-				flex justify-center border-b-2 border-grey-lighter bg-grey-lightest
+				flex justify-center border-b-2 border-gray-200 bg-gray-100
 			`
 		};
 	}
@@ -55,7 +55,7 @@ export class Th {
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 100 100"
 				class={`
-					h-2 ml-1 align-middle
+					h-2 ml-1 inline-block align-middle
 					${this.sort === '' && 'hidden'}
 					${this.sort === 'none' && 'opacity-0'}
 				`}

@@ -40,8 +40,8 @@ export class TablePagination {
 		return (
 			<div
 				class={`
-					flex flex-1 p-4 uppercase font-bold text-grey-darkest
-                    ${active ? 'cursor-pointer hover:text-grey-darker' : 'opacity-50'}
+					flex flex-1 p-4 uppercase font-bold text-gray-800
+                    ${active ? 'cursor-pointer hover:text-gray-600' : 'opacity-50'}
                 `}
 				onClick={() => {
 					if (active) {
@@ -56,8 +56,7 @@ export class TablePagination {
 
 	hostData() {
 		return {
-			class:
-				'flex text-center text-sm bg-grey-lightest border-grey-lighter border-t'
+			class: 'flex text-center text-sm bg-gray-100 border-gray-200 border-t'
 		};
 	}
 
