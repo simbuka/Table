@@ -16,6 +16,11 @@ export class Tbody {
 	 */
 	@Prop() noResults = false;
 	/**
+	 * No results text
+	 */
+	@Prop() noResultsContent: string | JSX.Element | HTMLElement =
+		'There are no results found.';
+	/**
 	 * Height for no results overlay
 	 */
 	@Prop() overlayHeight = 150;
@@ -30,7 +35,9 @@ export class Tbody {
 		return [
 			<slot />,
 			this.loading && <Loader />,
-			this.noResults && <Overlay height={this.overlayHeight} />
+			this.noResults && (
+				<Overlay height={this.overlayHeight} content={this.noResultsContent} />
+			)
 		];
 	}
 }

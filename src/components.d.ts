@@ -78,6 +78,10 @@ export namespace Components {
     */
     'noResults': boolean;
     /**
+    * No results text
+    */
+    'noResultsContent': string | JSX.Element | HTMLElement;
+    /**
     * Height for no results overlay
     */
     'overlayHeight': number;
@@ -91,6 +95,10 @@ export namespace Components {
     * Tells if to show no results overlay
     */
     'noResults'?: boolean;
+    /**
+    * No results text
+    */
+    'noResultsContent'?: string | JSX.Element | HTMLElement;
     /**
     * Height for no results overlay
     */

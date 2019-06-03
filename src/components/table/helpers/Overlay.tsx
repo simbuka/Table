@@ -2,8 +2,8 @@ import { FunctionalComponent } from '@stencil/core';
 
 export const Overlay: FunctionalComponent<{
 	height: number;
-	content?: string | JSX.Element | HTMLElement;
-}> = ({ height, content = 'There are no results found.' }) => {
+	content: string | JSX.Element | HTMLElement;
+}> = ({ height, content }) => {
 	return (
 		<div
 			style={{ height: `${height}px` }}
