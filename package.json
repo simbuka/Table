@@ -1,6 +1,6 @@
 {
 	"name": "@simbuka/table",
-	"version": "1.2.1",
+	"version": "2.0.0",
 	"description": "Basic web component to provide modern look and feel to any default table",
 	"module": "dist/esm/index.js",
 	"main": "dist/index.js",
@@ -18,7 +18,7 @@
 		"make:changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
 	},
 	"devDependencies": {
-		"@stencil/core": "0.18.1",
+		"@stencil/core": "^1.1.5",
 		"conventional-changelog-cli": "^2.0.11",
 		"fs-extra": "^7.0.1",
 		"tslint": "^5.10.0",

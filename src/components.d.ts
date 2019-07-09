@@ -5,12 +5,7 @@
  */
 
 
-import '@stencil/core';
-
-
-import {
-  EventEmitter,
-} from '@stencil/core';
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   IOnPageChange,
 } from './components/table-pagination/IOnPageChange';
@@ -21,9 +16,8 @@ import {
   IOnSortChange,
 } from './components/th/IOnSortChange';
 
-
 export namespace Components {
-
+  interface SmbTable {}
   interface SmbTablePagination {
     /**
     * Tells if next page button should be active
@@ -42,32 +36,6 @@ export namespace Components {
     */
     'labelPrevious': string;
   }
-  interface SmbTablePaginationAttributes extends StencilHTMLAttributes {
-    /**
-    * Tells if next page button should be active
-    */
-    'activeNext'?: boolean;
-    /**
-    * Tells if previous page button should be active
-    */
-    'activePrevious'?: boolean;
-    /**
-    * Label for next button
-    */
-    'labelNext'?: string;
-    /**
-    * Label for previous button
-    */
-    'labelPrevious'?: string;
-    /**
-    * Emitted when clicked on previous or next page button
-    */
-    'onOnPageChange'?: (event: CustomEvent<IOnPageChange>) => void;
-  }
-
-  interface SmbTable {}
-  interface SmbTableAttributes extends StencilHTMLAttributes {}
-
   interface SmbTbody {
     /**
     * Tells if to show loader
@@ -80,31 +48,12 @@ export namespace Components {
     /**
     * No results text
     */
-    'noResultsContent': string | JSX.Element | HTMLElement;
+    'noResultsContent': any;
     /**
     * Height for no results overlay
     */
     'overlayHeight': number;
   }
-  interface SmbTbodyAttributes extends StencilHTMLAttributes {
-    /**
-    * Tells if to show loader
-    */
-    'loading'?: boolean;
-    /**
-    * Tells if to show no results overlay
-    */
-    'noResults'?: boolean;
-    /**
-    * No results text
-    */
-    'noResultsContent'?: string | JSX.Element | HTMLElement;
-    /**
-    * Height for no results overlay
-    */
-    'overlayHeight'?: number;
-  }
-
   interface SmbTd {
     /**
     * Tells if to add default spacing of cell
@@ -119,21 +68,6 @@ export namespace Components {
     */
     'truncate': boolean;
   }
-  interface SmbTdAttributes extends StencilHTMLAttributes {
-    /**
-    * Tells if to add default spacing of cell
-    */
-    'noSpacing'?: boolean;
-    /**
-    * Tells if to shrink to child's width
-    */
-    'shrink'?: boolean;
-    /**
-    * Tells if to add ellipsis if the content does not fit the container
-    */
-    'truncate'?: boolean;
-  }
-
   interface SmbTh {
     /**
     * Cell unique key. Required if `sort` is used
@@ -156,72 +90,23 @@ export namespace Components {
     */
     'truncate': boolean;
   }
-  interface SmbThAttributes extends StencilHTMLAttributes {
-    /**
-    * Cell unique key. Required if `sort` is used
-    */
-    'key': number;
-    /**
-    * Tells if to add default spacing of cell
-    */
-    'noSpacing'?: boolean;
-    /**
-    * Emitted when sorting changes
-    */
-    'onOnSortChange'?: (event: CustomEvent<IOnSortChange>) => void;
-    /**
-    * Tells if to shrink to child's width
-    */
-    'shrink'?: boolean;
-    /**
-    * Sort type. Leave empty to disable sort
-    */
-    'sort'?: ISortType;
-    /**
-    * Tells if to add ellipsis if the content does not fit the container
-    */
-    'truncate'?: boolean;
-  }
-
   interface SmbThead {}
-  interface SmbTheadAttributes extends StencilHTMLAttributes {}
-
   interface SmbTr {}
-  interface SmbTrAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
-  interface StencilElementInterfaces {
-    'SmbTablePagination': Components.SmbTablePagination;
-    'SmbTable': Components.SmbTable;
-    'SmbTbody': Components.SmbTbody;
-    'SmbTd': Components.SmbTd;
-    'SmbTh': Components.SmbTh;
-    'SmbThead': Components.SmbThead;
-    'SmbTr': Components.SmbTr;
-  }
 
-  interface StencilIntrinsicElements {
-    'smb-table-pagination': Components.SmbTablePaginationAttributes;
-    'smb-table': Components.SmbTableAttributes;
-    'smb-tbody': Components.SmbTbodyAttributes;
-    'smb-td': Components.SmbTdAttributes;
-    'smb-th': Components.SmbThAttributes;
-    'smb-thead': Components.SmbTheadAttributes;
-    'smb-tr': Components.SmbTrAttributes;
-  }
-
-
-  interface HTMLSmbTablePaginationElement extends Components.SmbTablePagination, HTMLStencilElement {}
-  var HTMLSmbTablePaginationElement: {
-    prototype: HTMLSmbTablePaginationElement;
-    new (): HTMLSmbTablePaginationElement;
-  };
 
   interface HTMLSmbTableElement extends Components.SmbTable, HTMLStencilElement {}
   var HTMLSmbTableElement: {
     prototype: HTMLSmbTableElement;
     new (): HTMLSmbTableElement;
+  };
+
+  interface HTMLSmbTablePaginationElement extends Components.SmbTablePagination, HTMLStencilElement {}
+  var HTMLSmbTablePaginationElement: {
+    prototype: HTMLSmbTablePaginationElement;
+    new (): HTMLSmbTablePaginationElement;
   };
 
   interface HTMLSmbTbodyElement extends Components.SmbTbody, HTMLStencilElement {}
@@ -253,34 +138,120 @@ declare global {
     prototype: HTMLSmbTrElement;
     new (): HTMLSmbTrElement;
   };
-
   interface HTMLElementTagNameMap {
-    'smb-table-pagination': HTMLSmbTablePaginationElement
-    'smb-table': HTMLSmbTableElement
-    'smb-tbody': HTMLSmbTbodyElement
-    'smb-td': HTMLSmbTdElement
-    'smb-th': HTMLSmbThElement
-    'smb-thead': HTMLSmbTheadElement
-    'smb-tr': HTMLSmbTrElement
-  }
-
-  interface ElementTagNameMap {
-    'smb-table-pagination': HTMLSmbTablePaginationElement;
     'smb-table': HTMLSmbTableElement;
+    'smb-table-pagination': HTMLSmbTablePaginationElement;
     'smb-tbody': HTMLSmbTbodyElement;
     'smb-td': HTMLSmbTdElement;
     'smb-th': HTMLSmbThElement;
     'smb-thead': HTMLSmbTheadElement;
     'smb-tr': HTMLSmbTrElement;
   }
-
-
-  export namespace JSX {
-    export interface Element {}
-    export interface IntrinsicElements extends StencilIntrinsicElements {
-      [tagName: string]: any;
-    }
-  }
-  export interface HTMLAttributes extends StencilHTMLAttributes {}
-
 }
+
+declare namespace LocalJSX {
+  interface SmbTable extends JSXBase.HTMLAttributes<HTMLSmbTableElement> {}
+  interface SmbTablePagination extends JSXBase.HTMLAttributes<HTMLSmbTablePaginationElement> {
+    /**
+    * Tells if next page button should be active
+    */
+    'activeNext'?: boolean;
+    /**
+    * Tells if previous page button should be active
+    */
+    'activePrevious'?: boolean;
+    /**
+    * Label for next button
+    */
+    'labelNext'?: string;
+    /**
+    * Label for previous button
+    */
+    'labelPrevious'?: string;
+    /**
+    * Emitted when clicked on previous or next page button
+    */
+    'onOnPageChange'?: (event: CustomEvent<IOnPageChange>) => void;
+  }
+  interface SmbTbody extends JSXBase.HTMLAttributes<HTMLSmbTbodyElement> {
+    /**
+    * Tells if to show loader
+    */
+    'loading'?: boolean;
+    /**
+    * Tells if to show no results overlay
+    */
+    'noResults'?: boolean;
+    /**
+    * No results text
+    */
+    'noResultsContent'?: any;
+    /**
+    * Height for no results overlay
+    */
+    'overlayHeight'?: number;
+  }
+  interface SmbTd extends JSXBase.HTMLAttributes<HTMLSmbTdElement> {
+    /**
+    * Tells if to add default spacing of cell
+    */
+    'noSpacing'?: boolean;
+    /**
+    * Tells if to shrink to child's width
+    */
+    'shrink'?: boolean;
+    /**
+    * Tells if to add ellipsis if the content does not fit the container
+    */
+    'truncate'?: boolean;
+  }
+  interface SmbTh extends JSXBase.HTMLAttributes<HTMLSmbThElement> {
+    /**
+    * Cell unique key. Required if `sort` is used
+    */
+    'key': number;
+    /**
+    * Tells if to add default spacing of cell
+    */
+    'noSpacing'?: boolean;
+    /**
+    * Emitted when sorting changes
+    */
+    'onOnSortChange'?: (event: CustomEvent<IOnSortChange>) => void;
+    /**
+    * Tells if to shrink to child's width
+    */
+    'shrink'?: boolean;
+    /**
+    * Sort type. Leave empty to disable sort
+    */
+    'sort'?: ISortType;
+    /**
+    * Tells if to add ellipsis if the content does not fit the container
+    */
+    'truncate'?: boolean;
+  }
+  interface SmbThead extends JSXBase.HTMLAttributes<HTMLSmbTheadElement> {}
+  interface SmbTr extends JSXBase.HTMLAttributes<HTMLSmbTrElement> {}
+
+  interface IntrinsicElements {
+    'smb-table': SmbTable;
+    'smb-table-pagination': SmbTablePagination;
+    'smb-tbody': SmbTbody;
+    'smb-td': SmbTd;
+    'smb-th': SmbTh;
+    'smb-thead': SmbThead;
+    'smb-tr': SmbTr;
+  }
+}
+
+export { LocalJSX as JSX };
+
+
+declare module "@stencil/core" {
+  export namespace JSX {
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+  }
+}
+
+

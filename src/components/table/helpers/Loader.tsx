@@ -1,4 +1,4 @@
-import { FunctionalComponent } from '@stencil/core';
+import { FunctionalComponent, h } from '@stencil/core';
 
 export const Loader: FunctionalComponent = () => (
 	<div class="absolute inset-0 flex items-center align-middle z-10 text-center bg-white opacity-75">

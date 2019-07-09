@@ -1,8 +1,8 @@
-import { FunctionalComponent } from '@stencil/core';
+import { FunctionalComponent, h } from '@stencil/core';
 
 export const Overlay: FunctionalComponent<{
 	height: number;
-	content: string | JSX.Element | HTMLElement;
+	content: any;
 }> = ({ height, content }) => {
 	return (
 		<div

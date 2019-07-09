@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
 
 import { IOnSortChange } from './IOnSortChange';
 import { ISortType } from './ISortType';
@@ -39,16 +39,6 @@ export class Th {
 		});
 	}
 
-	hostData() {
-		return {
-			class: `
-				${!this.shrink && 'flex-1'}
-				${this.truncate && 'truncate'}
-				flex justify-center border-b-2 border-gray-200 bg-gray-100
-			`
-		};
-	}
-
 	render() {
 		const icon = (
 			<svg
@@ -72,24 +62,32 @@ export class Th {
 		);
 
 		return (
-			<div
-				class={`${
-					this.sort === '' ? '' : ' cursor-pointer select-none '
-				} flex w-full justify-center flex-col ${!this.noSpacing &&
-					'my-4 px-4'} uppercase text-sm font-bold`}
-				onClick={() => {
-					if (this.sort !== '') {
-						this.handleClick();
-					}
+			<Host
+				class={{
+					'flex justify-center border-b-2 border-gray-200 bg-gray-100': true,
+					'flex-1': !this.shrink,
+					truncate: this.truncate
 				}}
 			>
-				<div class={`${this.truncate && 'truncate'}`}>
-					<span class="align-middle">
-						<slot />
-					</span>
-					{icon}
+				<div
+					class={`${
+						this.sort === '' ? '' : ' cursor-pointer select-none '
+					} flex w-full justify-center flex-col ${!this.noSpacing &&
+						'my-4 px-4'} uppercase text-sm font-bold`}
+					onClick={() => {
+						if (this.sort !== '') {
+							this.handleClick();
+						}
+					}}
+				>
+					<div class={`${this.truncate && 'truncate'}`}>
+						<span class="align-middle">
+							<slot />
+						</span>
+						{icon}
+					</div>
 				</div>
-			</div>
+			</Host>
 		);
 	}
 }

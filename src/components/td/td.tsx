@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Host, Prop, h } from '@stencil/core';
 
 @Component({
 	tag: 'smb-td'
@@ -17,24 +17,22 @@ export class Td {
 	 */
 	@Prop() truncate = false;
 
-	hostData() {
-		return {
-			class: `
-				${!this.shrink && 'flex-1'}
-				${!this.noSpacing && 'p-4'}
-				${this.truncate && 'truncate'}
-				flex justify-center
-			`
-		};
-	}
-
 	render() {
 		return (
-			<div class="flex w-full justify-center flex-col">
-				<div class={`${this.truncate && 'truncate'}`}>
-					<slot />
+			<Host
+				class={{
+					'flex justify-center': true,
+					'flex-1': !this.shrink,
+					'p-4': !this.noSpacing,
+					truncate: this.truncate
+				}}
+			>
+				<div class="flex w-full justify-center flex-col">
+					<div class={{ truncate: this.truncate }}>
+						<slot />
+					</div>
 				</div>
-			</div>
+			</Host>
 		);
 	}
 }

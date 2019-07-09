@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
 
 import { IOnPageChange } from './IOnPageChange';
 
@@ -54,12 +54,6 @@ export class TablePagination {
 		);
 	}
 
-	hostData() {
-		return {
-			class: 'flex text-center text-sm bg-gray-100 border-gray-200 border-t'
-		};
-	}
-
 	render() {
 		const previousButton = this.createButton({
 			type: 'previous',
@@ -72,14 +66,16 @@ export class TablePagination {
 			label: this.labelNext
 		});
 
-		return [
-			previousButton,
-			<div class="flex flex-1 p-1">
-				<div class="flex m-auto align-middle items-center">
-					<slot />
+		return (
+			<Host class="flex text-center text-sm bg-gray-100 border-gray-200 border-t">
+				{previousButton}
+				<div class="flex flex-1 p-1">
+					<div class="flex m-auto align-middle items-center">
+						<slot />
+					</div>
 				</div>
-			</div>,
-			nextButton
-		];
+				{nextButton}
+			</Host>
+		);
 	}
 }
