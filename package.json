@@ -1,8 +1,8 @@
 {
 	"name": "@simbuka/table",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Basic web component to provide modern look and feel to any default table",
-	"module": "dist/esm/index.js",
+	"module": "dist/index.mjs",
 	"main": "dist/index.js",
 	"unpkg": "dist/ionic.js",
 	"types": "dist/types/components.d.ts",
