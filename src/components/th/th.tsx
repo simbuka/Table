@@ -8,9 +8,9 @@ import { ISortType } from './ISortType';
 })
 export class Th {
 	/**
-	 * Cell unique key. Required if `sort` is used
+	 * Cell unique identifier. Required if `sort` is used
 	 */
-	@Prop() key!: number;
+	@Prop() identifier!: number;
 	/**
 	 * Sort type. Leave empty to disable sort
 	 */
@@ -35,7 +35,7 @@ export class Th {
 
 	private handleClick() {
 		this.onSortChange.emit({
-			key: this.key
+			identifier: this.identifier
 		});
 	}
 

@@ -70,9 +70,9 @@ export namespace Components {
   }
   interface SmbTh {
     /**
-    * Cell unique key. Required if `sort` is used
+    * Cell unique identifier. Required if `sort` is used
     */
-    'key': number;
+    'identifier': number;
     /**
     * Tells if to add default spacing of cell
     */
@@ -207,9 +207,9 @@ declare namespace LocalJSX {
   }
   interface SmbTh extends JSXBase.HTMLAttributes<HTMLSmbThElement> {
     /**
-    * Cell unique key. Required if `sort` is used
+    * Cell unique identifier. Required if `sort` is used
     */
-    'key': number;
+    'identifier': number;
     /**
     * Tells if to add default spacing of cell
     */

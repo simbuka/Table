@@ -1,3 +1,3 @@
 export interface IOnSortChange {
-	key: number;
+	identifier: number;
 }
