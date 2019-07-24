@@ -39,10 +39,9 @@ export class TablePagination {
 	}) {
 		return (
 			<div
-				class={`
-					flex flex-1 p-4 uppercase font-bold text-gray-800
-                    ${active ? 'cursor-pointer hover:text-gray-600' : 'opacity-50'}
-                `}
+				class={`flex flex-1 p-4 uppercase font-bold text-gray-800 ${
+					active ? 'cursor-pointer hover:text-gray-600' : 'opacity-50'
+				}`}
 				onClick={() => {
 					if (active) {
 						this.onPageChange.emit({ direction: type });

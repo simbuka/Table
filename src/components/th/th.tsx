@@ -44,11 +44,8 @@ export class Th {
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 100 100"
-				class={`
-					h-2 ml-1 inline-block align-middle
-					${this.sort === '' && 'hidden'}
-					${this.sort === 'none' && 'opacity-0'}
-				`}
+				class={`h-2 ml-1 inline-block align-middle${this.sort === '' &&
+					' hidden'}${this.sort === 'none' ? ' opacity-0' : ''}`}
 				style={{
 					transform: this.sort === 'asc' ? 'rotate(180deg)' : ''
 				}}
@@ -70,17 +67,16 @@ export class Th {
 				}}
 			>
 				<div
-					class={`${
-						this.sort === '' ? '' : ' cursor-pointer select-none '
-					} flex w-full justify-center flex-col ${!this.noSpacing &&
-						'my-4 px-4'} uppercase text-sm font-bold`}
+					class={`flex w-full justify-center flex-col uppercase text-sm font-bold${
+						this.noSpacing ? '' : ' my-4 px-4'
+					}${this.sort === '' ? '' : ' cursor-pointer select-none'}`}
 					onClick={() => {
 						if (this.sort !== '') {
 							this.handleClick();
 						}
 					}}
 				>
-					<div class={`${this.truncate && 'truncate'}`}>
+					<div class={this.truncate ? 'truncate' : ''}>
 						<span class="align-middle">
 							<slot />
 						</span>
